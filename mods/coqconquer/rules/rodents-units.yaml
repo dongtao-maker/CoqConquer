@@ -171,6 +171,7 @@ rd_greatwhistler:
 	Inherits: ^Soldier
 	Inherits@RD: ^RodentUnit
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	-GainsExperienceMultiplier:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Buildable:

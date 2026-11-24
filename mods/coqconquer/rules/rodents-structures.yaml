@@ -119,6 +119,9 @@ rd_radar:
 		Icon: gps
 		ChargeInterval: 6000
 		Actor: rd_whistle_camera
+		EffectImage: moveflsh
+		EffectPalette: moveflash
+		EffectSequence: idle
 		DeploySound: alarm.wav
 		LifeTime: 500
 		SupportPowerPaletteOrder: 20

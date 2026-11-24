@@ -183,6 +183,7 @@ dt_kite:
 		Speed: 120
 	RevealsShroud:
 		Range: 10c0
+		Type: GroundPosition
 	RenderSprites:
 		Image: dt_kite
 	-SpawnActorOnDeath:
@@ -213,12 +214,22 @@ dt_criminal:
 # --- Poulicoptere: bamboo helicopter lifted by 4 Dong Tao chickens tied to the rotor sticks.
 # The chickens are passengers: unload them and it cannot fly. Egg grenadiers aboard drop egg bombs.
 dt_chickcopter:
-	Inherits: TRAN
+	Inherits: ^Helicopter
+	Inherits@CARGOPIPS: ^CargoPips
 	Inherits@DT: ^DongTaoUnit
 	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	UpdatesPlayerStatistics:
+		AddToArmyValue: true
+	RevealsShroud:
+		MinRange: 6c0
+		Range: 8c0
+		Type: GroundPosition
+		RevealGeneratedShroud: False
+	RevealsShroud@GAPGEN:
+		Range: 6c0
+		Type: GroundPosition
 	Buildable:
 		Queue: Vehicle
-		BuildAtProductionType: Vehicle
 		BuildPaletteOrder: 85
 		Prerequisites: ~vehicles.dongtao, dt_radar
 		Description: actor-dt-chickcopter.description
@@ -233,10 +244,12 @@ dt_chickcopter:
 	Aircraft:
 		Speed: 110
 		TurnSpeed: 24
+		AltitudeVelocity: 0c58
 		PauseOnCondition: !rotor-chicken
 	Cargo:
 		Types: Infantry
 		MaxWeight: 6
+		AfterUnloadDelay: 40
 		InitialUnits: dt_chicken, dt_chicken, dt_chicken, dt_chicken
 		PassengerConditions:
 			dt_chicken: rotor-chicken
@@ -255,10 +268,6 @@ dt_chickcopter:
 		PersistentTargeting: false
 		AttackType: Hover
 		OpportunityFire: False
-	-WithIdleOverlay@ROTOR1AIR:
-	-WithIdleOverlay@ROTOR1GROUND:
-	-WithIdleOverlay@ROTOR2AIR:
-	-WithIdleOverlay@ROTOR2GROUND:
 	WithIdleOverlay@ROTORAIR:
 		Sequence: rotor
 		RequiresCondition: rotor-chicken && airborne
@@ -271,6 +280,7 @@ dt_chickcopter:
 	RenderSprites:
 		Image: dt_chickcopter
 	-SpawnActorOnDeath:
+	-EjectOnDeath:
 	Voiced:
 		VoiceSet: DongTaoVehicleVoice
 	Selectable:

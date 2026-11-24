@@ -187,6 +187,7 @@ dt_dongtaorhlelas:
 	Inherits: ^Soldier
 	Inherits@DT: ^DongTaoUnit
 	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	-GainsExperienceMultiplier:
 	WithInfantryBody:
 		DefaultAttackSequence: shoot
 	Buildable:

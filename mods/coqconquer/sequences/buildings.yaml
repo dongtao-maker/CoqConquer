@@ -24,6 +24,9 @@ dt_fact:
 			DESERT: bib2.des
 		Length: *
 		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_mcv.png
+		Offset: 0,0
 
 rd_fact:
 	Defaults:
@@ -48,6 +51,9 @@ rd_fact:
 			SNOW: bib2.sno
 			DESERT: bib2.des
 		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_mcv.png
 		Offset: 0,0
 
 dt_powr:
@@ -231,6 +237,8 @@ dt_radar:
 		Filename: coqconquer|buildings/dt_radar.png
 		Offset: 0,-11
 	idle:
+	active:
+		Start: 0
 	damaged-idle:
 		Start: 1
 	dead:
