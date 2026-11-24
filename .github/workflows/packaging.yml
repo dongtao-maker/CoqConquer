@@ -64,7 +64,7 @@ jobs:
   macos:
     name: macOS Disk Image
     needs: release
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     continue-on-error: true
     steps:
       - name: Clone Repository
