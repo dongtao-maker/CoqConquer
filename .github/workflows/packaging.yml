@@ -1,9 +1,14 @@
 name: Release Packaging
 
+# Publishing a version: write the version number in RELEASE_VERSION and push to the
+# "release" branch (or push a Git tag). The release page and its tag are created automatically.
 on:
   push:
     tags:
     - '*'
+    branches:
+    - release
+  workflow_dispatch:
 
 permissions:
   contents: write  #  for release creation (svenstaro/upload-release-action)
@@ -13,13 +18,17 @@ jobs:
     name: Create GitHub Release
     runs-on: ubuntu-22.04
     steps:
+      - name: Clone Repository
+        uses: actions/checkout@v6
+
       - name: Create release page
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release view "${{ github.ref_name }}" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
-          gh release create "${{ github.ref_name }}" --repo "${{ github.repository }}" \
-            --title "Coq et Conquer ${{ github.ref_name }}" \
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then TAG="${GITHUB_REF#refs/tags/}"; else TAG="$(tr -d '[:space:]' < RELEASE_VERSION)"; fi
+          gh release view "${TAG}" --repo "${{ github.repository }}" >/dev/null 2>&1 || \
+          gh release create "${TAG}" --repo "${{ github.repository }}" --target "${{ github.sha }}" \
+            --title "Coq et Conquer ${TAG}" \
             --notes "Windows : CoqConquer-...-x64.exe (installateur). Linux : CoqConquer-...-x86_64.AppImage. Mac : CoqConquer-....dmg (clic droit > Ouvrir au premier lancement)."
 
   linux:
@@ -36,7 +45,7 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Prepare Environment
-        run: echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
+        run: if [[ "${GITHUB_REF}" == refs/tags/* ]]; then echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}; else echo "GIT_TAG=$(tr -d '[:space:]' < RELEASE_VERSION)" >> ${GITHUB_ENV}; fi
 
       - name: Package AppImage
         run: |
@@ -50,7 +59,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          gh release upload ${{ github.ref_name }} build/linux/*
+          gh release upload "${GIT_TAG}" build/linux/*
 
   macos:
     name: macOS Disk Image
@@ -67,7 +76,7 @@ jobs:
           dotnet-version: '6.0.x'
 
       - name: Prepare Environment
-        run: echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
+        run: if [[ "${GITHUB_REF}" == refs/tags/* ]]; then echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}; else echo "GIT_TAG=$(tr -d '[:space:]' < RELEASE_VERSION)" >> ${GITHUB_ENV}; fi
 
       - name: Package Disk Image
         env:
@@ -86,7 +95,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          gh release upload ${{ github.ref_name }} build/macos/*
+          gh release upload "${GIT_TAG}" build/macos/*
 
   windows:
     name: Windows Installers
@@ -103,7 +112,7 @@ jobs:
 
       - name: Prepare Environment
         run: |
-          echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}
+          if [[ "${GITHUB_REF}" == refs/tags/* ]]; then echo "GIT_TAG=${GITHUB_REF#refs/tags/}" >> ${GITHUB_ENV}; else echo "GIT_TAG=$(tr -d '[:space:]' < RELEASE_VERSION)" >> ${GITHUB_ENV}; fi
           sudo apt-get update
           sudo apt-get install nsis wine64
 
@@ -118,4 +127,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          gh release upload ${{ github.ref_name }} build/windows/*
+          gh release upload "${GIT_TAG}" build/windows/*

@@ -32,6 +32,6 @@ Multijoueur → Créer un serveur (port 1234), l'autre joueur fait « Connexion 
 
 Projet basé sur le [OpenRA Mod SDK](https://github.com/OpenRA/OpenRAModSDK) (moteur `release-20250330`).
 `make` (Linux/Mac) ou `make.cmd` (Windows) puis `launch-game.sh` / `launch-game.cmd`.
-Publier une nouvelle version : créer un tag Git (par ex. `v1.1`) ; GitHub fabrique les installateurs automatiquement.
+Publier une nouvelle version : changer le numéro dans `RELEASE_VERSION` puis envoyer sur la branche `release` ; GitHub fabrique les installateurs automatiquement.
 
 Moteur OpenRA sous licence GPL v3 (voir `COPYING`).
