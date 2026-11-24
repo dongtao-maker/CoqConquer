@@ -138,7 +138,8 @@ rm "${LAUNCHER_ASSEMBLY_DIR}/Launcher-x86_64" "${LAUNCHER_ASSEMBLY_DIR}/Launcher
 
 install_assemblies "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}" "${LAUNCHER_ASSEMBLY_DIR}/x86_64" "osx-x64" "net6" "True" "${PACKAGING_COPY_CNC_DLL}" "${PACKAGING_COPY_D2K_DLL}"
 install_assemblies "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}" "${LAUNCHER_ASSEMBLY_DIR}/arm64" "osx-arm64" "net6" "True" "${PACKAGING_COPY_CNC_DLL}" "${PACKAGING_COPY_D2K_DLL}"
-install_assemblies "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}" "${LAUNCHER_ASSEMBLY_DIR}/mono" "osx-x64" "mono" "True" "${PACKAGING_COPY_CNC_DLL}" "${PACKAGING_COPY_D2K_DLL}"
+# Coq et Conquer: Mono build (macOS 10.11-10.14 only) skipped, msbuild is not available on GitHub runners
+# install_assemblies "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}" "${LAUNCHER_ASSEMBLY_DIR}/mono" "osx-x64" "mono" "True" "${PACKAGING_COPY_CNC_DLL}" "${PACKAGING_COPY_D2K_DLL}"
 install_data "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}" "${LAUNCHER_RESOURCES_DIR}"
 
 for f in ${PACKAGING_COPY_ENGINE_FILES}; do
@@ -149,7 +150,7 @@ done
 echo "Building mod files"
 install_mod_assemblies "${TEMPLATE_ROOT}" "${LAUNCHER_ASSEMBLY_DIR}/x86_64" "osx-x64" "net6" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}"
 install_mod_assemblies "${TEMPLATE_ROOT}" "${LAUNCHER_ASSEMBLY_DIR}/arm64" "osx-arm64" "net6" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}"
-install_mod_assemblies "${TEMPLATE_ROOT}" "${LAUNCHER_ASSEMBLY_DIR}/mono" "osx-x64" "mono" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}"
+# install_mod_assemblies "${TEMPLATE_ROOT}" "${LAUNCHER_ASSEMBLY_DIR}/mono" "osx-x64" "mono" "${TEMPLATE_ROOT}/${ENGINE_DIRECTORY}"
 
 cp -LR "${TEMPLATE_ROOT}mods/"* "${LAUNCHER_RESOURCES_DIR}/mods"
 
