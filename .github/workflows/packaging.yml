@@ -59,12 +59,12 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          gh release upload "${GIT_TAG}" build/linux/*
+          gh release upload --clobber "${GIT_TAG}" build/linux/*
 
   macos:
     name: macOS Disk Image
     needs: release
-    runs-on: macos-14
+    runs-on: macos-latest
     continue-on-error: true
     steps:
       - name: Clone Repository
@@ -95,7 +95,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          gh release upload "${GIT_TAG}" build/macos/*
+          gh release upload --clobber "${GIT_TAG}" build/macos/*
 
   windows:
     name: Windows Installers
@@ -127,4 +127,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          gh release upload "${GIT_TAG}" build/windows/*
+          gh release upload --clobber "${GIT_TAG}" build/windows/*
