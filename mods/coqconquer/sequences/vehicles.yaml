@@ -1,0 +1,392 @@
+# Coq & Conquer: vehicle and aircraft sprites (32 facings, team colour = bright green).
+
+dt_mcv:
+	Defaults:
+		Filename: coqconquer|units/dt_mcv.png
+	idle:
+		Facings: 32
+	icon:
+		Filename: coqconquer|icons/dt_mcv.png
+
+rd_mcv:
+	Defaults:
+		Filename: coqconquer|units/rd_mcv.png
+	idle:
+		Facings: 32
+	icon:
+		Filename: coqconquer|icons/rd_mcv.png
+
+dt_harv_empty:
+	Defaults:
+		Filename: coqconquer|units/dt_harv_empty.png
+	idle:
+		Facings: 32
+	harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	move:
+		Start: 111
+		Length: 4
+		Facings: 32
+		Tick: 120
+	icon:
+		Filename: coqconquer|icons/dt_harv.png
+
+dt_harv_half:
+	Defaults:
+		Filename: coqconquer|units/dt_harv_half.png
+	idle:
+		Facings: 32
+	harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	move:
+		Start: 111
+		Length: 4
+		Facings: 32
+		Tick: 120
+	icon:
+		Filename: coqconquer|icons/dt_harv.png
+
+dt_harv:
+	Defaults:
+		Filename: coqconquer|units/dt_harv.png
+	idle:
+		Facings: 32
+	harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	move:
+		Start: 111
+		Length: 4
+		Facings: 32
+		Tick: 120
+	icon:
+		Filename: coqconquer|icons/dt_harv.png
+
+rd_harv_empty:
+	Defaults:
+		Filename: coqconquer|units/rd_harv_empty.png
+	idle:
+		Facings: 32
+	harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	move:
+		Start: 111
+		Length: 4
+		Facings: 32
+		Tick: 120
+	icon:
+		Filename: coqconquer|icons/rd_harv.png
+
+rd_harv_half:
+	Defaults:
+		Filename: coqconquer|units/rd_harv_half.png
+	idle:
+		Facings: 32
+	harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	move:
+		Start: 111
+		Length: 4
+		Facings: 32
+		Tick: 120
+	icon:
+		Filename: coqconquer|icons/rd_harv.png
+
+rd_harv:
+	Defaults:
+		Filename: coqconquer|units/rd_harv.png
+	idle:
+		Facings: 32
+	harvest:
+		Start: 32
+		Length: 8
+		Facings: 8
+	dock:
+		Start: 96
+		Length: 8
+	dock-loop:
+		Start: 104
+		Length: 7
+	move:
+		Start: 111
+		Length: 4
+		Facings: 32
+		Tick: 120
+	icon:
+		Filename: coqconquer|icons/rd_harv.png
+
+dt_scooter:
+	Defaults:
+		Filename: coqconquer|units/dt_scooter.png
+	idle:
+		Facings: 32
+	icon:
+		Filename: coqconquer|icons/dt_scooter.png
+
+dt_firecrackerlauncher:
+	Defaults:
+		Filename: coqconquer|units/dt_firecrackerlauncher.png
+	idle:
+		Facings: 32
+	spinner:
+		Length: 1
+	icon:
+		Filename: coqconquer|icons/dt_firecrackerlauncher.png
+
+dt_eggcatapult:
+	Defaults:
+		Filename: coqconquer|units/dt_eggcatapult.png
+	idle:
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	icon:
+		Filename: coqconquer|icons/dt_eggcatapult.png
+
+rd_conecatapult:
+	Defaults:
+		Filename: coqconquer|units/rd_conecatapult.png
+	idle:
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	icon:
+		Filename: coqconquer|icons/rd_conecatapult.png
+
+dt_ricetruck:
+	Defaults:
+		Filename: coqconquer|units/dt_ricetruck.png
+	idle:
+		Facings: 32
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	open:
+		Start: 32
+		Length: 3
+	unload:
+		Start: 34
+	icon:
+		Filename: coqconquer|icons/dt_ricetruck.png
+
+rd_ram:
+	Defaults:
+		Filename: coqconquer|units/rd_ram.png
+	idle:
+		Facings: 32
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	open:
+		Start: 32
+		Length: 3
+	unload:
+		Start: 34
+	icon:
+		Filename: coqconquer|icons/rd_ram.png
+
+dt_tractor:
+	Defaults:
+		Filename: coqconquer|units/dt_tractor.png
+	idle:
+		Facings: 32
+	turret:
+		Start: 32
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	icon:
+		Filename: coqconquer|icons/dt_tractor.png
+
+rd_stump:
+	Defaults:
+		Filename: coqconquer|units/rd_stump.png
+	idle:
+		Facings: 32
+	turret:
+		Start: 32
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	icon:
+		Filename: coqconquer|icons/rd_stump.png
+
+dt_criminal:
+	Defaults:
+		Filename: coqconquer|units/dt_criminal.png
+	idle:
+		Facings: 32
+	turret:
+		Start: 32
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	icon:
+		Filename: coqconquer|icons/dt_criminal.png
+
+dt_kite:
+	Defaults:
+		Filename: coqconquer|units/dt_kite.png
+	idle:
+		Facings: 32
+	rotor:
+		Start: 32
+		Length: 4
+	rotor2:
+		Start: 32
+		Length: 4
+	slow-rotor:
+		Start: 32
+		Length: 8
+	slow-rotor2:
+		Start: 32
+		Length: 8
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	open:
+		Start: 0
+		Length: 1
+	unload:
+		Start: 0
+	icon:
+		Filename: coqconquer|icons/dt_kite.png
+
+rd_flyingsquirrel:
+	Defaults:
+		Filename: coqconquer|units/rd_flyingsquirrel.png
+	idle:
+		Facings: 32
+	rotor:
+		Start: 32
+		Length: 4
+	rotor2:
+		Start: 32
+		Length: 4
+	slow-rotor:
+		Start: 32
+		Length: 8
+	slow-rotor2:
+		Start: 32
+		Length: 8
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	open:
+		Start: 0
+		Length: 1
+	unload:
+		Start: 0
+	icon:
+		Filename: coqconquer|icons/rd_flyingsquirrel.png
+
+rd_squadron:
+	Defaults:
+		Filename: coqconquer|units/rd_squadron.png
+	idle:
+		Facings: 32
+	rotor:
+		Start: 32
+		Length: 4
+	rotor2:
+		Start: 32
+		Length: 4
+	slow-rotor:
+		Start: 32
+		Length: 8
+	slow-rotor2:
+		Start: 32
+		Length: 8
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	open:
+		Start: 0
+		Length: 1
+	unload:
+		Start: 0
+	icon:
+		Filename: coqconquer|icons/rd_squadron.png
+
+dt_chickcopter:
+	Defaults:
+		Filename: coqconquer|units/dt_chickcopter.png
+	idle:
+		Facings: 32
+	rotor:
+		Start: 32
+		Length: 8
+		Tick: 50
+		ZOffset: 1
+	slow-rotor:
+		Start: 40
+		ZOffset: 1
+	bare-rotor:
+		Start: 41
+		ZOffset: 1
+	open:
+		Start: 0
+		Length: 1
+	unload:
+		Start: 0
+	icon:
+		Filename: coqconquer|icons/dt_chickcopter.png
+
+dt_grenade:
+	idle:
+		Filename: coqconquer|units/dt_grenade.png
+		ZOffset: 1023
+
+dt_dropping:
+	idle:
+		Filename: coqconquer|units/dt_dropping.png
+		ZOffset: 1023

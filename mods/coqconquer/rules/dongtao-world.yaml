@@ -1,0 +1,128 @@
+# =====================================================================
+#  Coq & Conquer - world rules: factions, starting units, locomotor
+#  (engine release-20250330, built on top of the Red Alert rules)
+# =====================================================================
+
+^BaseWorld:
+	# Recolour bright-green pixels of PNG sprites to the player's colour.
+	PlayerColorShift:
+		BasePalette: player
+	# Hide the original Red Alert factions (kept for map compatibility).
+	Faction@england:
+		Selectable: False
+	Faction@france:
+		Selectable: False
+	Faction@germany:
+		Selectable: False
+	Faction@russia:
+		Selectable: False
+	Faction@ukraine:
+		Selectable: False
+	Faction@randomallies:
+		Selectable: False
+	Faction@randomsoviet:
+		Selectable: False
+	Faction@random:
+		RandomFactionMembers: dongtao, rodents
+	Faction@dongtao:
+		Name: faction-dongtao.name
+		InternalName: dongtao
+		Side: Dong Tao
+		Description: faction-dongtao.description
+	Faction@rodents:
+		Name: faction-rodents.name
+		InternalName: rodents
+		Side: Rodents
+		Description: faction-rodents.description
+	# Giant hero locomotor: walks like infantry but crushes infantry.
+	Locomotor@GIANTFOOT:
+		Name: giantfoot
+		Crushes: mine, crate, infantry
+		TerrainSpeeds:
+			Clear: 100
+			Rough: 89
+			Road: 111
+			Bridge: 111
+			Ore: 89
+			Gems: 89
+			Beach: 89
+
+World:
+	StartingUnits@mcvonly:
+		Factions: allies, england, france, germany, soviet, russia, ukraine
+	StartingUnits@mcvonly_dongtao:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: dongtao
+		BaseActor: dt_mcv
+	StartingUnits@light_dongtao:
+		Class: light
+		ClassName: options-starting-units.light-support
+		Factions: dongtao
+		BaseActor: dt_mcv
+		SupportActors: dt_chicken, dt_chicken, dt_chicken, dt_grenadier, dt_grenadier, dt_scooter
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	StartingUnits@heavy_dongtao:
+		Class: heavy
+		ClassName: options-starting-units.heavy-support
+		Factions: dongtao
+		BaseActor: dt_mcv
+		SupportActors: dt_chicken, dt_chicken, dt_chicken, dt_grenadier, dt_grenadier, dt_scooter, dt_tractor, dt_tractor, dt_tractor
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	StartingUnits@mcvonly_rodents:
+		Class: none
+		ClassName: options-starting-units.mcv-only
+		Factions: rodents
+		BaseActor: rd_mcv
+	StartingUnits@light_rodents:
+		Class: light
+		ClassName: options-starting-units.light-support
+		Factions: rodents
+		BaseActor: rd_mcv
+		SupportActors: rd_guard, rd_guard, rd_guard, rd_acorn, rd_acorn, rd_stump
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+	StartingUnits@heavy_rodents:
+		Class: heavy
+		ClassName: options-starting-units.heavy-support
+		Factions: rodents
+		BaseActor: rd_mcv
+		SupportActors: rd_guard, rd_guard, rd_guard, rd_acorn, rd_acorn, rd_stump, rd_stump, rd_stump, rd_stump
+		InnerSupportRadius: 3
+		OuterSupportRadius: 5
+
+# ---------------------------------------------------------------------
+#  Shared fragments
+# ---------------------------------------------------------------------
+^DongTaoUnit:
+	ExternalCondition@DAWN:
+		Condition: dawn-song
+	SpeedMultiplier@DAWN:
+		RequiresCondition: dawn-song
+		Modifier: 125
+	ExternalCondition@WHISTLED:
+		Condition: whistled
+	SpeedMultiplier@WHISTLED:
+		RequiresCondition: whistled
+		Modifier: 50
+
+^RodentUnit:
+	ExternalCondition@RALLY:
+		Condition: rally
+	SpeedMultiplier@RALLY:
+		RequiresCondition: rally
+		Modifier: 120
+
+# Burrowing: invisible after standing still, revealed when attacking or
+# moving. Detected by "Underground" detectors.
+^Burrows:
+	Cloak@BURROW:
+		InitialDelay: 75
+		CloakDelay: 75
+		UncloakOn: Attack, Move, Unload, Dock, Damage
+		DetectionTypes: Underground
+		CloakSound: burrow.wav
+		UncloakSound: burrow.wav
+		CloakedCondition: cloaked

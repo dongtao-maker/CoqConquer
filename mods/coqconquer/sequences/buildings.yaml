@@ -1,0 +1,752 @@
+# Coq & Conquer: building sprites (team colour = bright green).
+
+dt_fact:
+	Defaults:
+		Filename: coqconquer|buildings/dt_fact.png
+		Offset: 0,-13
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	build:
+		Start: 0
+	damaged-build:
+		Start: 1
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+
+rd_fact:
+	Defaults:
+		Filename: coqconquer|buildings/rd_fact.png
+		Offset: 0,-2
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	build:
+		Start: 0
+	damaged-build:
+		Start: 1
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+
+dt_powr:
+	Defaults:
+		Filename: coqconquer|buildings/dt_powr.png
+		Offset: 0,-12
+	idle:
+		Length: 8
+		Tick: 110
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 160
+	dead:
+		Start: 8
+		Tick: 800
+	make:
+		Start: 16
+		Length: 10
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_powr.png
+		Offset: 0,0
+
+dt_bigpowr:
+	Defaults:
+		Filename: coqconquer|buildings/dt_bigpowr.png
+		Offset: 0,-22
+	idle:
+		Length: 8
+		Tick: 110
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 160
+	dead:
+		Start: 8
+		Tick: 800
+	make:
+		Start: 16
+		Length: 10
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_bigpowr.png
+		Offset: 0,0
+
+dt_goldmine:
+	Defaults:
+		Filename: coqconquer|buildings/dt_goldmine.png
+		Offset: 0,-8
+	idle:
+		Length: 8
+		Tick: 110
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 160
+	dead:
+		Start: 8
+		Tick: 800
+	make:
+		Start: 16
+		Length: 10
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_goldmine.png
+		Offset: 0,0
+
+rd_powr:
+	Defaults:
+		Filename: coqconquer|buildings/rd_powr.png
+		Offset: 0,-3
+	idle:
+		Length: 8
+		Tick: 110
+	damaged-idle:
+		Start: 8
+		Length: 8
+		Tick: 160
+	dead:
+		Start: 8
+		Tick: 800
+	make:
+		Start: 16
+		Length: 10
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_powr.png
+		Offset: 0,0
+
+dt_barr:
+	Defaults:
+		Filename: coqconquer|buildings/dt_barr.png
+		Offset: 0,-14
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	roof-chicken1:
+		Start: 12
+		Length: 1
+		Tick: 100
+	roof-chicken2:
+		Start: 13
+		Length: 1
+		Tick: 100
+	roof-grenadier1:
+		Start: 14
+		Length: 1
+		Tick: 100
+	roof-grenadier2:
+		Start: 15
+		Length: 1
+		Tick: 100
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_barr.png
+		Offset: 0,0
+
+rd_barr:
+	Defaults:
+		Filename: coqconquer|buildings/rd_barr.png
+		Offset: 0,-2
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_barr.png
+		Offset: 0,0
+
+dt_radar:
+	Defaults:
+		Filename: coqconquer|buildings/dt_radar.png
+		Offset: 0,-11
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_radar.png
+		Offset: 0,0
+
+rd_radar:
+	Defaults:
+		Filename: coqconquer|buildings/rd_radar.png
+		Offset: 0,-2
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_radar.png
+		Offset: 0,0
+
+dt_temple:
+	Defaults:
+		Filename: coqconquer|buildings/dt_temple.png
+		Offset: 0,-9
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	active:
+		Start: 12
+		Length: 1
+		Tick: 100
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_temple.png
+		Offset: 0,0
+
+rd_cave:
+	Defaults:
+		Filename: coqconquer|buildings/rd_cave.png
+		Offset: 0,-15
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_cave.png
+		Offset: 0,0
+
+dt_proc:
+	Defaults:
+		Filename: coqconquer|buildings/dt_proc.png
+		Offset: 0,-8
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	idle-top:
+		Start: 12
+		Length: 1
+		Tick: 100
+	damaged-idle-top:
+		Start: 13
+		Length: 1
+		Tick: 100
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_proc.png
+		Offset: 0,0
+
+rd_proc:
+	Defaults:
+		Filename: coqconquer|buildings/rd_proc.png
+		Offset: 0,-2
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	idle-top:
+		Start: 12
+		Length: 1
+		Tick: 100
+	damaged-idle-top:
+		Start: 13
+		Length: 1
+		Tick: 100
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_proc.png
+		Offset: 0,0
+
+dt_weap:
+	Defaults:
+		Filename: coqconquer|buildings/dt_weap.png
+		Offset: 0,-9
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	build-top:
+		Start: 12
+		Length: 10
+		Tick: 100
+	damaged-build-top:
+		Start: 22
+		Length: 4
+		Tick: 100
+	place:
+		Start: 0
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_weap.png
+		Offset: 0,0
+
+rd_weap:
+	Defaults:
+		Filename: coqconquer|buildings/rd_weap.png
+		Offset: 0,-13
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	build-top:
+		Start: 12
+		Length: 10
+		Tick: 100
+	damaged-build-top:
+		Start: 22
+		Length: 4
+		Tick: 100
+	place:
+		Start: 0
+	bib:
+		Filename: bib2.tem
+		TilesetFilenames:
+			SNOW: bib2.sno
+			DESERT: bib2.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_weap.png
+		Offset: 0,0
+
+rd_oak:
+	Defaults:
+		Filename: coqconquer|buildings/rd_oak.png
+		Offset: 0,-14
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	active:
+		Start: 12
+		Length: 6
+		Tick: 100
+	damaged-active:
+		Start: 18
+		Length: 6
+		Tick: 100
+	bib:
+		Filename: bib3.tem
+		TilesetFilenames:
+			SNOW: bib3.sno
+			DESERT: bib3.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/rd_oak.png
+		Offset: 0,0
+
+dt_altar:
+	Defaults:
+		Filename: coqconquer|buildings/dt_altar.png
+		Offset: 0,-12
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	active:
+		Start: 12
+		Length: 7
+		Tick: 100
+	damaged-active:
+		Start: 19
+		Length: 7
+		Tick: 100
+	icon:
+		Filename: coqconquer|icons/dt_altar.png
+		Offset: 0,0
+
+rd_summit:
+	Defaults:
+		Filename: coqconquer|buildings/rd_summit.png
+		Offset: 0,-8
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	active:
+		Start: 12
+		Length: 7
+		Tick: 100
+	damaged-active:
+		Start: 19
+		Length: 7
+		Tick: 100
+	icon:
+		Filename: coqconquer|icons/rd_summit.png
+		Offset: 0,0
+
+dt_hatch:
+	Defaults:
+		Filename: coqconquer|buildings/dt_hatch.png
+		Offset: 0,-3
+	idle:
+		Start: 8
+	damaged-idle:
+		Start: 17
+	stages:
+		Length: 9
+	damaged-stages:
+		Start: 9
+		Length: 9
+	make:
+		Start: 18
+		Length: 10
+	bib:
+		TilesetFilenames:
+			SNOW: mbSILO.sno
+			INTERIOR: mbSILO.int
+			TEMPERAT: mbSILO.tem
+			DESERT: mbSILO.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_hatch.png
+		Offset: 0,0
+
+dt_wall:
+	Defaults:
+		Filename: coqconquer|buildings/dt_wall.png
+		Offset: 0,-6
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+	icon:
+		Filename: coqconquer|icons/dt_wall.png
+		Offset: 0,0
+
+rd_palisade:
+	Defaults:
+		Filename: coqconquer|buildings/rd_palisade.png
+		Offset: 0,-6
+	idle:
+		Length: 16
+	damaged-idle:
+		Start: 16
+		Length: 16
+	icon:
+		Filename: coqconquer|icons/rd_palisade.png
+		Offset: 0,0
+
+dt_nest:
+	Defaults:
+		Filename: coqconquer|buildings/dt_nest.png
+		Offset: 0,-6
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	muzzle:
+		Filename: minigun.shp
+		Length: 6
+		Facings: 8
+	bib:
+		TilesetFilenames:
+			SNOW: mbPBOX.sno
+			INTERIOR: mbPBOX.int
+			TEMPERAT: mbPBOX.tem
+			DESERT: mbPBOX.des
+		Length: *
+		Offset: 0,-2
+	icon:
+		Filename: coqconquer|icons/dt_nest.png
+		Offset: 0,0
+
+rd_perch:
+	Defaults:
+		Filename: coqconquer|buildings/rd_perch.png
+		Offset: 0,-23
+	idle:
+	damaged-idle:
+		Start: 1
+	dead:
+		Start: 1
+		Tick: 800
+	make:
+		Start: 2
+		Length: 10
+	muzzle:
+		Filename: minigun.shp
+		TilesetFilenames:
+		Length: 6
+		Facings: 8
+	icon:
+		Filename: coqconquer|icons/rd_perch.png
+		Offset: 0,0
+
+dt_firecracker:
+	Defaults:
+		Filename: coqconquer|buildings/dt_firecracker.png
+		Offset: 0,-9
+	idle:
+	make:
+		Start: 1
+		Length: 10
+	turret:
+		Start: 11
+		Facings: 32
+	recoil:
+		Start: 43
+		Facings: 32
+	damaged-turret:
+		Start: 75
+		Facings: 32
+	damaged-recoil:
+		Start: 107
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Start: 1
+		Length: 4
+	bib:
+		TilesetFilenames:
+			SNOW: mbAGUN.sno
+			INTERIOR: mbAGUN.int
+			TEMPERAT: mbAGUN.tem
+			DESERT: mbAGUN.des
+		Length: *
+		Offset: 0,0
+	icon:
+		Filename: coqconquer|icons/dt_firecracker.png
+		Offset: 0,0
+
+dt_mortar:
+	Defaults:
+		Filename: coqconquer|buildings/dt_mortar.png
+		Offset: 0,-4
+	idle:
+	make:
+		Start: 1
+		Length: 10
+	turret:
+		Start: 11
+		Facings: 32
+	recoil:
+		Start: 43
+		Facings: 32
+	damaged-turret:
+		Start: 75
+		Facings: 32
+	damaged-recoil:
+		Start: 107
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	bib:
+		TilesetFilenames:
+			SNOW: mbGUN.sno
+			INTERIOR: mbGUN.int
+			TEMPERAT: mbGUN.tem
+			DESERT: mbGUN.des
+		Length: *
+		Offset: -1,-1
+	icon:
+		Filename: coqconquer|icons/dt_mortar.png
+		Offset: 0,0
+
+rd_conelauncher:
+	Defaults:
+		Filename: coqconquer|buildings/rd_conelauncher.png
+		Offset: 0,-5
+	idle:
+	make:
+		Start: 1
+		Length: 10
+	turret:
+		Start: 11
+		Facings: 32
+	recoil:
+		Start: 43
+		Facings: 32
+	damaged-turret:
+		Start: 75
+		Facings: 32
+	damaged-recoil:
+		Start: 107
+		Facings: 32
+	muzzle:
+		Filename: gunfire2.shp
+		Length: 5
+	bib:
+		TilesetFilenames:
+			SNOW: mbGUN.sno
+			INTERIOR: mbGUN.int
+			TEMPERAT: mbGUN.tem
+			DESERT: mbGUN.des
+		Length: *
+		Offset: -1,-1
+	icon:
+		Filename: coqconquer|icons/rd_conelauncher.png
+		Offset: 0,0

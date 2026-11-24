@@ -1,0 +1,277 @@
+# =====================================================================
+#  Dong Tao faction - vehicles and aircraft
+#  Placeholder art: Red Alert vehicle sprites (RenderSprites > Image).
+# =====================================================================
+
+# --- Charrette du chef (MCV) -----------------------------------------
+dt_mcv:
+	Inherits: MCV
+	Inherits@DT: ^DongTaoUnit
+	Tooltip:
+		Name: actor-dt-mcv.name
+	Buildable:
+		Prerequisites: dt_weap, ~vehicles.dongtao
+		Description: actor-dt-mcv.description
+	Transforms:
+		IntoActor: dt_fact
+	RenderSprites:
+		Image: dt_mcv
+	-SpawnActorOnDeath:
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Charrette a buffle (harvester) ----------------------------------
+dt_harv:
+	Inherits: HARV
+	Inherits@DT: ^DongTaoUnit
+	WithHarvesterSpriteBody:
+		ImageByFullness: dt_harv_empty, dt_harv_half, dt_harv
+	WithMoveAnimation:
+		MoveSequence: move
+	Tooltip:
+		Name: actor-dt-harv.name
+	Buildable:
+		Prerequisites: dt_proc, ~vehicles.dongtao
+		Description: actor-dt-harv.description
+	RenderSprites:
+		Image: dt_harv
+	-SpawnActorOnDeath:
+	-HarvesterHuskModifier:
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Scooter de Hanoi (fast recon) -----------------------------------
+dt_scooter:
+	Inherits: ^Vehicle
+	Inherits@DT: ^DongTaoUnit
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 20
+		Prerequisites: ~vehicles.dongtao
+		Description: actor-dt-scooter.description
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: actor-dt-scooter.name
+	Health:
+		HP: 15000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 142
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: DT_ScooterMG
+	AttackFrontal:
+	RenderSprites:
+		Image: dt_scooter
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Camion riziere (APC) --------------------------------------------
+dt_ricetruck:
+	Inherits: APC
+	Inherits@DT: ^DongTaoUnit
+	Tooltip:
+		Name: actor-dt-ricetruck.name
+	Buildable:
+		Prerequisites: ~vehicles.dongtao
+		Description: actor-dt-ricetruck.description
+	Valued:
+		Cost: 700
+	Cargo:
+		MaxWeight: 5
+	RenderSprites:
+		Image: dt_ricetruck
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Lance-petards (mobile AA) ---------------------------------------
+dt_firecrackerlauncher:
+	Inherits: ^Vehicle
+	Inherits@DT: ^DongTaoUnit
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 40
+		Prerequisites: ~vehicles.dongtao
+		Description: actor-dt-firecrackerlauncher.description
+	Valued:
+		Cost: 600
+	Tooltip:
+		Name: actor-dt-firecrackerlauncher.name
+	Health:
+		HP: 20000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 85
+	Armament@AA:
+		Weapon: DT_FirecrackerAA
+	Armament@GROUND:
+		Name: secondary
+		Weapon: DT_FirecrackerGround
+	AttackFrontal:
+	RenderSprites:
+		Image: dt_firecrackerlauncher
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+	RevealsShroud:
+		Range: 7c0
+
+# --- Tracteur blinde (medium tank) -----------------------------------
+dt_tractor:
+	Inherits: 2TNK
+	Inherits@DT: ^DongTaoUnit
+	Tooltip:
+		Name: actor-dt-tractor.name
+	Buildable:
+		Prerequisites: ~vehicles.dongtao, dt_radar
+		Description: actor-dt-tractor.description
+	Valued:
+		Cost: 850
+	Health:
+		HP: 52000
+	Mobile:
+		Speed: 60
+	Armament:
+		Weapon: DT_TractorGun
+	RenderSprites:
+		Image: dt_tractor
+	-SpawnActorOnDeath:
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Catapulte a oeufs (artillery) -----------------------------------
+dt_eggcatapult:
+	Inherits: ARTY
+	Inherits@DT: ^DongTaoUnit
+	Tooltip:
+		Name: actor-dt-eggcatapult.name
+	Buildable:
+		Prerequisites: ~vehicles.dongtao, ~techcenter.dongtao
+		Description: actor-dt-eggcatapult.description
+	Valued:
+		Cost: 900
+	Armament:
+		Weapon: DT_GiantEgg
+	RenderSprites:
+		Image: dt_eggcatapult
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Cerf-volant de guet (unarmed air recon) -------------------------
+dt_kite:
+	Inherits: ^Helicopter
+	Inherits@DT: ^DongTaoUnit
+	Buildable:
+		Queue: Vehicle
+		BuildPaletteOrder: 80
+		Prerequisites: ~vehicles.dongtao, dt_radar
+		Description: actor-dt-kite.description
+	Valued:
+		Cost: 300
+	Tooltip:
+		Name: actor-dt-kite.name
+	Health:
+		HP: 8000
+	Armor:
+		Type: Light
+	Aircraft:
+		Speed: 120
+	RevealsShroud:
+		Range: 10c0
+	RenderSprites:
+		Image: dt_kite
+	-SpawnActorOnDeath:
+	-EjectOnDeath:
+	Voiced:
+		VoiceSet: KiteVoice
+
+# --- Criminal Dong Tao (mammoth-class heavy tank, same stats as the Soviet Mammoth)
+dt_criminal:
+	Inherits: 4TNK
+	Inherits@DT: ^DongTaoUnit
+	Tooltip:
+		Name: actor-dt-criminal.name
+		GenericName: actor-dt-criminal.name
+	Buildable:
+		Prerequisites: dt_weap, ~techcenter.dongtao, ~vehicles.dongtao
+		Description: actor-dt-criminal.description
+	Armament@PRIMARY:
+		Weapon: DT_CriminalCannon
+	Armament@SECONDARY:
+		Weapon: DT_CriminalTusk
+	RenderSprites:
+		Image: dt_criminal
+	-SpawnActorOnDeath:
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+
+# --- Poulicoptere: bamboo helicopter lifted by 4 Dong Tao chickens tied to the rotor sticks.
+# The chickens are passengers: unload them and it cannot fly. Egg grenadiers aboard drop egg bombs.
+dt_chickcopter:
+	Inherits: TRAN
+	Inherits@DT: ^DongTaoUnit
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	Buildable:
+		Queue: Vehicle
+		BuildAtProductionType: Vehicle
+		BuildPaletteOrder: 85
+		Prerequisites: ~vehicles.dongtao, dt_radar
+		Description: actor-dt-chickcopter.description
+	Valued:
+		Cost: 800
+	Tooltip:
+		Name: actor-dt-chickcopter.name
+	Health:
+		HP: 9000
+	Armor:
+		Type: Light
+	Aircraft:
+		Speed: 110
+		TurnSpeed: 24
+		PauseOnCondition: !rotor-chicken
+	Cargo:
+		Types: Infantry
+		MaxWeight: 6
+		InitialUnits: dt_chicken, dt_chicken, dt_chicken, dt_chicken
+		PassengerConditions:
+			dt_chicken: rotor-chicken
+			dt_grenadier: grenadier-aboard
+	Armament@BOMB1:
+		Weapon: DT_EggBomb
+		LocalOffset: 0,0,-213
+		RequiresCondition: grenadier-aboard >= 1
+	Armament@BOMB2:
+		Weapon: DT_EggBomb
+		LocalOffset: 0,0,-213
+		FireDelay: 12
+		RequiresCondition: grenadier-aboard >= 2
+	AttackAircraft:
+		FacingTolerance: 512
+		PersistentTargeting: false
+		AttackType: Hover
+		OpportunityFire: False
+	-WithIdleOverlay@ROTOR1AIR:
+	-WithIdleOverlay@ROTOR1GROUND:
+	-WithIdleOverlay@ROTOR2AIR:
+	-WithIdleOverlay@ROTOR2GROUND:
+	WithIdleOverlay@ROTORAIR:
+		Sequence: rotor
+		RequiresCondition: rotor-chicken && airborne
+	WithIdleOverlay@ROTORGROUND:
+		Sequence: slow-rotor
+		RequiresCondition: rotor-chicken && !airborne
+	WithIdleOverlay@ROTORBARE:
+		Sequence: bare-rotor
+		RequiresCondition: !rotor-chicken
+	RenderSprites:
+		Image: dt_chickcopter
+	-SpawnActorOnDeath:
+	Voiced:
+		VoiceSet: DongTaoVehicleVoice
+	Selectable:
+		DecorationBounds: 1706, 1536

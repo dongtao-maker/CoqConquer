@@ -1,0 +1,340 @@
+# Coq & Conquer: one sprite group per unit/building.
+# Body = Red Alert placeholder sprite, icon = our own PNG.
+
+dt_altar:
+	Inherits: mslo
+	icon:
+		Filename: coqconquer|icons/dt_altar.png
+		TilesetFilenames:
+		Start: 0
+
+dt_barr:
+	Inherits: tent
+	icon:
+		Filename: coqconquer|icons/dt_barr.png
+		TilesetFilenames:
+		Start: 0
+
+dt_chick:
+	Inherits: dog
+	icon:
+		Filename: coqconquer|icons/dt_chick.png
+		TilesetFilenames:
+		Start: 0
+
+
+dt_dragonrooster:
+	Inherits: e3
+	icon:
+		Filename: coqconquer|icons/dt_dragonrooster.png
+		TilesetFilenames:
+		Start: 0
+
+dt_eggcatapult:
+	Inherits: arty
+	icon:
+		Filename: coqconquer|icons/dt_eggcatapult.png
+		TilesetFilenames:
+		Start: 0
+
+dt_farmer:
+	Inherits: e6
+	icon:
+		Filename: coqconquer|icons/dt_farmer.png
+		TilesetFilenames:
+		Start: 0
+
+dt_firecracker:
+	Inherits: agun
+	icon:
+		Filename: coqconquer|icons/dt_firecracker.png
+		TilesetFilenames:
+		Start: 0
+
+dt_firecrackerlauncher:
+	Inherits: mrj
+	icon:
+		Filename: coqconquer|icons/dt_firecrackerlauncher.png
+		TilesetFilenames:
+		Start: 0
+
+dt_grenadier:
+	Inherits: e2
+	icon:
+		Filename: coqconquer|icons/dt_grenadier.png
+		TilesetFilenames:
+		Start: 0
+
+dt_harv:
+	Inherits: harv
+	icon:
+		Filename: coqconquer|icons/dt_harv.png
+		TilesetFilenames:
+		Start: 0
+
+dt_hatch:
+	Inherits: silo
+	icon:
+		Filename: coqconquer|icons/dt_hatch.png
+		TilesetFilenames:
+		Start: 0
+
+dt_kite:
+	Inherits: tran
+	icon:
+		Filename: coqconquer|icons/dt_kite.png
+		TilesetFilenames:
+		Start: 0
+
+dt_mcv:
+	Inherits: mcv
+	icon:
+		Filename: coqconquer|icons/dt_mcv.png
+		TilesetFilenames:
+		Start: 0
+
+dt_mortar:
+	Inherits: gun
+	icon:
+		Filename: coqconquer|icons/dt_mortar.png
+		TilesetFilenames:
+		Start: 0
+
+dt_motherhen:
+	Inherits: medi
+	icon:
+		Filename: coqconquer|icons/dt_motherhen.png
+		TilesetFilenames:
+		Start: 0
+
+dt_nest:
+	Inherits: pbox
+	icon:
+		Filename: coqconquer|icons/dt_nest.png
+		TilesetFilenames:
+		Start: 0
+
+dt_powr:
+	Inherits: powr
+	icon:
+		Filename: coqconquer|icons/dt_powr.png
+		TilesetFilenames:
+		Start: 0
+
+dt_proc:
+	Inherits: proc
+	icon:
+		Filename: coqconquer|icons/dt_proc.png
+		TilesetFilenames:
+		Start: 0
+
+dt_radar:
+	Inherits: dome
+	icon:
+		Filename: coqconquer|icons/dt_radar.png
+		TilesetFilenames:
+		Start: 0
+
+dt_ricetruck:
+	Inherits: apc
+	icon:
+		Filename: coqconquer|icons/dt_ricetruck.png
+		TilesetFilenames:
+		Start: 0
+
+dt_scooter:
+	Inherits: jeep
+	icon:
+		Filename: coqconquer|icons/dt_scooter.png
+		TilesetFilenames:
+		Start: 0
+
+dt_temple:
+	Inherits: atek
+	icon:
+		Filename: coqconquer|icons/dt_temple.png
+		TilesetFilenames:
+		Start: 0
+
+dt_tractor:
+	Inherits: 2tnk
+	icon:
+		Filename: coqconquer|icons/dt_tractor.png
+		TilesetFilenames:
+		Start: 0
+
+dt_wall:
+	Inherits: sbag
+	icon:
+		Filename: coqconquer|icons/dt_wall.png
+		TilesetFilenames:
+		Start: 0
+
+dt_weap:
+	Inherits: weap
+	icon:
+		Filename: coqconquer|icons/dt_weap.png
+		TilesetFilenames:
+		Start: 0
+
+rd_acorn:
+	Inherits: e4
+	icon:
+		Filename: coqconquer|icons/rd_acorn.png
+		TilesetFilenames:
+		Start: 0
+
+rd_barr:
+	Inherits: barr
+	icon:
+		Filename: coqconquer|icons/rd_barr.png
+		TilesetFilenames:
+		Start: 0
+
+rd_cave:
+	Inherits: stek
+	icon:
+		Filename: coqconquer|icons/rd_cave.png
+		TilesetFilenames:
+		Start: 0
+
+rd_conecatapult:
+	Inherits: arty
+	icon:
+		Filename: coqconquer|icons/rd_conecatapult.png
+		TilesetFilenames:
+		Start: 0
+
+rd_conelauncher:
+	Inherits: gun
+	icon:
+		Filename: coqconquer|icons/rd_conelauncher.png
+		TilesetFilenames:
+		Start: 0
+
+rd_driller:
+	Inherits: e3
+	icon:
+		Filename: coqconquer|icons/rd_driller.png
+		TilesetFilenames:
+		Start: 0
+
+rd_flyingsquirrel:
+	Inherits: hind
+	icon:
+		Filename: coqconquer|icons/rd_flyingsquirrel.png
+		TilesetFilenames:
+		Start: 0
+
+
+rd_harv:
+	Inherits: harv
+	icon:
+		Filename: coqconquer|icons/rd_harv.png
+		TilesetFilenames:
+		Start: 0
+
+rd_herbalist:
+	Inherits: medi
+	icon:
+		Filename: coqconquer|icons/rd_herbalist.png
+		TilesetFilenames:
+		Start: 0
+
+rd_mcv:
+	Inherits: mcv
+	icon:
+		Filename: coqconquer|icons/rd_mcv.png
+		TilesetFilenames:
+		Start: 0
+
+rd_oak:
+	Inherits: hpad
+	icon:
+		Filename: coqconquer|icons/rd_oak.png
+		TilesetFilenames:
+		Start: 0
+
+rd_palisade:
+	Inherits: fenc
+	icon:
+		Filename: coqconquer|icons/rd_palisade.png
+		TilesetFilenames:
+		Start: 0
+
+rd_perch:
+	Inherits: hbox
+	icon:
+		Filename: coqconquer|icons/rd_perch.png
+		TilesetFilenames:
+		Start: 0
+
+rd_powr:
+	Inherits: powr
+	icon:
+		Filename: coqconquer|icons/rd_powr.png
+		TilesetFilenames:
+		Start: 0
+
+rd_proc:
+	Inherits: proc
+	icon:
+		Filename: coqconquer|icons/rd_proc.png
+		TilesetFilenames:
+		Start: 0
+
+rd_radar:
+	Inherits: dome
+	icon:
+		Filename: coqconquer|icons/rd_radar.png
+		TilesetFilenames:
+		Start: 0
+
+rd_ram:
+	Inherits: apc
+	icon:
+		Filename: coqconquer|icons/rd_ram.png
+		TilesetFilenames:
+		Start: 0
+
+rd_sapper:
+	Inherits: e6
+	icon:
+		Filename: coqconquer|icons/rd_sapper.png
+		TilesetFilenames:
+		Start: 0
+
+rd_scout:
+	Inherits: dog
+	icon:
+		Filename: coqconquer|icons/rd_scout.png
+		TilesetFilenames:
+		Start: 0
+
+rd_squadron:
+	Inherits: heli
+	icon:
+		Filename: coqconquer|icons/rd_squadron.png
+		TilesetFilenames:
+		Start: 0
+
+rd_stump:
+	Inherits: 1tnk
+	icon:
+		Filename: coqconquer|icons/rd_stump.png
+		TilesetFilenames:
+		Start: 0
+
+rd_summit:
+	Inherits: mslo
+	icon:
+		Filename: coqconquer|icons/rd_summit.png
+		TilesetFilenames:
+		Start: 0
+
+rd_weap:
+	Inherits: weap
+	icon:
+		Filename: coqconquer|icons/rd_weap.png
+		TilesetFilenames:
+		Start: 0

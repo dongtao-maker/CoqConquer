@@ -1,0 +1,1415 @@
+# Coq & Conquer: unit sprites (team colour = bright green, shifted by the engine).
+
+dt_chicken:
+	Defaults:
+		Filename: coqconquer|units/dt_chicken.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_chicken.png
+
+dt_chick:
+	Defaults:
+		Filename: coqconquer|units/dt_chick.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_chick.png
+
+dt_grenadier:
+	Defaults:
+		Filename: coqconquer|units/dt_grenadier.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_grenadier.png
+
+dt_motherhen:
+	Defaults:
+		Filename: coqconquer|units/dt_motherhen.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_motherhen.png
+
+dt_farmer:
+	Defaults:
+		Filename: coqconquer|units/dt_farmer.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_farmer.png
+
+dt_dragonrooster:
+	Defaults:
+		Filename: coqconquer|units/dt_dragonrooster.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_dragonrooster.png
+
+dt_dongtaorhlelas:
+	Defaults:
+		Filename: coqconquer|units/dt_dongtaorhlelas.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/dt_dongtaorhlelas.png
+
+rd_guard:
+	Defaults:
+		Filename: coqconquer|units/rd_guard.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_guard.png
+
+rd_scout:
+	Defaults:
+		Filename: coqconquer|units/rd_scout.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_scout.png
+
+rd_acorn:
+	Defaults:
+		Filename: coqconquer|units/rd_acorn.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_acorn.png
+
+rd_herbalist:
+	Defaults:
+		Filename: coqconquer|units/rd_herbalist.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_herbalist.png
+
+rd_sapper:
+	Defaults:
+		Filename: coqconquer|units/rd_sapper.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_sapper.png
+
+rd_driller:
+	Defaults:
+		Filename: coqconquer|units/rd_driller.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_driller.png
+
+rd_greatwhistler:
+	Defaults:
+		Filename: coqconquer|units/rd_greatwhistler.png
+	stand:
+		Facings: 8
+	stand2:
+		Facings: 8
+	parachute:
+		Start: 4
+	run:
+		Start: 8
+		Length: 6
+		Facings: 8
+		Tick: 100
+	shoot:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	heal:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	throw:
+		Start: 56
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-stand:
+		Start: 88
+		Facings: 8
+	prone-stand2:
+		Start: 88
+		Facings: 8
+	prone-run:
+		Start: 96
+		Length: 4
+		Facings: 8
+		Tick: 100
+	liedown:
+		Start: 128
+		Length: 2
+		Facings: 8
+	standup:
+		Start: 144
+		Length: 2
+		Facings: 8
+	prone-shoot:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	prone-throw:
+		Start: 160
+		Length: 4
+		Facings: 8
+		Tick: 80
+	idle:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle1:
+		Start: 192
+		Length: 6
+		Tick: 120
+	idle2:
+		Start: 198
+		Length: 6
+		Tick: 120
+	die1:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die2:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die3:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die4:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die5:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die6:
+		Start: 204
+		Length: 8
+		Tick: 80
+	die-crushed:
+		Start: 211
+		Length: 1
+		Tick: 800
+	icon:
+		Filename: coqconquer|icons/rd_greatwhistler.png

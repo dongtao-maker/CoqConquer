@@ -1,0 +1,200 @@
+# =====================================================================
+#  Rodent League - weapons (Red Alert damage scale)
+# =====================================================================
+
+RD_Sling:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 22
+	Range: 4c512
+	Report: sling.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 1400
+		Versus:
+			None: 100
+			Wood: 15
+			Light: 20
+			Heavy: 5
+			Concrete: 5
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+RD_AcornVolley:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 15
+	Range: 5c512
+	Burst: 2
+	Report: acorns.wav
+	Projectile: Bullet
+		Speed: 400
+		Image: 50CAL
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 1100
+		Versus:
+			None: 110
+			Wood: 15
+			Light: 25
+			Heavy: 5
+			Concrete: 5
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+RD_DrillBite:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 40
+	Range: 1c512
+	Report: drill.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 7000
+		Versus:
+			None: 20
+			Wood: 40
+			Light: 100
+			Heavy: 90
+			Concrete: 30
+		DamageTypes: ExplosionDeath
+
+# HERO whistle: area damage + slows enemies by 50% for 3 seconds.
+RD_Whistle:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 75
+	Range: 3c0
+	Report: hwhistle.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 2c0
+		Damage: 5000
+		ValidRelationships: Enemy, Neutral
+		Versus:
+			None: 100
+			Wood: 30
+			Light: 50
+			Heavy: 25
+			Concrete: 20
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Slow: GrantExternalCondition
+		ValidTargets: GroundActor, WaterActor
+		Range: 2c0
+		Duration: 75
+		Condition: whistled
+		ValidRelationships: Enemy
+
+RD_StumpGun:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 40
+	Range: 4c768
+	Report: tractgun.wav
+	Projectile: Bullet
+		Speed: 682
+		Image: 120MM
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 128
+		Damage: 2800
+		Versus:
+			None: 25
+			Wood: 50
+			Light: 100
+			Heavy: 70
+			Concrete: 40
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: small_explosion
+
+RD_GiantPineCone:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 85
+	Range: 9c0
+	MinRange: 3c0
+	Report: catapult.wav
+	Projectile: Bullet
+		Speed: 204
+		Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 1c0
+		Image: 120MM
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 426
+		Damage: 9000
+		Versus:
+			None: 90
+			Wood: 75
+			Light: 40
+			Heavy: 25
+			Concrete: 60
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: med_explosion
+
+RD_PineConeAT:
+	Inherits: DT_Coconut
+
+RD_AirAcorns:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 12
+	Range: 5c0
+	Report: acorns.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 1300
+		Versus:
+			None: 110
+			Wood: 20
+			Light: 50
+			Heavy: 15
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+RD_WalnutBomb:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 70
+	Range: 4c0
+	Report: walnut.wav
+	Projectile: Bullet
+		Speed: 170
+		Blockable: false
+		Image: BOMB
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 426
+		Damage: 7000
+		Versus:
+			None: 60
+			Wood: 100
+			Light: 80
+			Heavy: 50
+			Concrete: 70
+		DamageTypes: ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: med_explosion
+
+Avalanche:
+	ValidTargets: Ground, Water, GroundActor, WaterActor, Underwater, AirborneActor, Trees
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
+		Spread: 2c512
+		Damage: 50000
+		Falloff: 100, 70, 40, 15, 0
+		Versus:
+			None: 100
+			Wood: 80
+			Light: 80
+			Heavy: 50
+			Concrete: 60
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: nuke
+		ImpactSounds: avalanche.wav
+	Warhead@3Shake: ShakeScreen
+		Duration: 25
+		Intensity: 3
+		Multiplier: 1,1

@@ -1,0 +1,211 @@
+# =====================================================================
+#  Rodent League - structures and defenses
+# =====================================================================
+
+# --- Grand Terrier (construction yard) -------------------------------
+rd_fact:
+	Inherits: FACT
+	Tooltip:
+		Name: actor-rd-fact.name
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: rd_fact
+	Transforms:
+		IntoActor: rd_mcv
+	ProvidesPrerequisite@rodents:
+		Prerequisite: structures.rodents
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Roue a ecureuil (power) -----------------------------------------
+rd_powr:
+	Inherits: POWR
+	Tooltip:
+		Name: actor-rd-powr.name
+	Buildable:
+		Prerequisites: ~structures.rodents
+		Description: actor-rd-powr.description
+	RenderSprites:
+		Image: rd_powr
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Reserve de noisettes (refinery + winter stock bonus) ------------
+rd_proc:
+	Inherits: PROC
+	Tooltip:
+		Name: actor-rd-proc.name
+	Buildable:
+		Prerequisites: rd_powr, ~structures.rodents
+		Description: actor-rd-proc.description
+	RenderSprites:
+		Image: rd_proc
+	FreeActor:
+		Actor: rd_harv
+	CashTrickler@WINTERSTOCK:
+		Interval: 250
+		Amount: 10
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Terrier de garde (barracks) -------------------------------------
+rd_barr:
+	Inherits: BARR
+	Tooltip:
+		Name: actor-rd-barr.name
+	Buildable:
+		Prerequisites: rd_powr, ~structures.rodents
+		Description: actor-rd-barr.description
+	RenderSprites:
+		Image: rd_barr
+	ProvidesPrerequisite@rodents:
+		Prerequisite: infantry.rodents
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Scierie (war factory) -------------------------------------------
+rd_weap:
+	Inherits: WEAP
+	Tooltip:
+		Name: actor-rd-weap.name
+	Buildable:
+		Prerequisites: rd_proc, ~structures.rodents
+		Description: actor-rd-weap.description
+	RenderSprites:
+		Image: rd_weap
+	ProvidesPrerequisite@rodents:
+		Prerequisite: vehicles.rodents
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Grand Chene (helipad: flying squirrels) -------------------------
+rd_oak:
+	Inherits: HPAD
+	Tooltip:
+		Name: actor-rd-oak.name
+	Buildable:
+		Prerequisites: rd_weap, ~structures.rodents
+		Description: actor-rd-oak.description
+	RenderSprites:
+		Image: rd_oak
+	ProvidesPrerequisite@rodents:
+		Prerequisite: aircraft.rodents
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Rocher du guetteur (radar + Alarm Whistle) ----------------------
+rd_radar:
+	Inherits: DOME
+	Tooltip:
+		Name: actor-rd-radar.name
+	Buildable:
+		Prerequisites: rd_proc, ~structures.rodents
+		Description: actor-rd-radar.description
+	RenderSprites:
+		Image: rd_radar
+	SpawnActorPower@WHISTLE:
+		PauseOnCondition: disabled
+		OrderName: AlarmWhistle
+		Name: actor-rd-radar.spawnactorpower-name
+		Description: actor-rd-radar.spawnactorpower-description
+		Icon: gps
+		ChargeInterval: 6000
+		Actor: rd_whistle_camera
+		DeploySound: alarm.wav
+		LifeTime: 500
+		SupportPowerPaletteOrder: 20
+	SupportPowerChargeBar:
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+rd_whistle_camera:
+	Inherits: CAMERA
+	RevealsShroud:
+		Range: 8c0
+	DetectCloaked:
+		DetectionTypes: Underground, Cloak
+		Range: 8c0
+
+# --- Grotte d'hibernation (tech center) ------------------------------
+rd_cave:
+	Inherits: STEK
+	Tooltip:
+		Name: actor-rd-cave.name
+	Buildable:
+		Prerequisites: rd_weap, rd_radar, ~structures.rodents
+		Description: actor-rd-cave.description
+	RenderSprites:
+		Image: rd_cave
+	ProvidesPrerequisite@rodents:
+		Prerequisite: techcenter.rodents
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Sommet enneige (superweapon: Avalanche) -------------------------
+rd_summit:
+	Inherits: MSLO
+	Tooltip:
+		Name: actor-rd-summit.name
+	Buildable:
+		Prerequisites: rd_cave, ~structures.rodents
+		Description: actor-rd-summit.description
+	RenderSprites:
+		Image: rd_summit
+	NukePower:
+		Name: actor-rd-summit.nukepower-name
+		Description: actor-rd-summit.nukepower-description
+		MissileWeapon: Avalanche
+		ChargeInterval: 15000
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard
+
+# --- Defenses --------------------------------------------------------
+rd_palisade:
+	Inherits: FENC
+	Tooltip:
+		Name: actor-rd-palisade.name
+	Buildable:
+		Prerequisites: ~structures.rodents
+		Description: actor-rd-palisade.description
+	RenderSprites:
+		Image: rd_palisade
+
+rd_perch:
+	Inherits: HBOX
+	Tooltip:
+		Name: actor-rd-perch.name
+	Buildable:
+		Prerequisites: rd_barr, ~structures.rodents
+		Description: actor-rd-perch.description
+	RenderSprites:
+		Image: rd_perch
+	Armament:
+		Weapon: RD_AcornVolley
+	Cargo:
+		InitialUnits: rd_guard
+
+rd_conelauncher:
+	Inherits: GUN
+	Tooltip:
+		Name: actor-rd-conelauncher.name
+	Buildable:
+		Prerequisites: rd_weap, ~structures.rodents
+		Description: actor-rd-conelauncher.description
+	RenderSprites:
+		Image: rd_conelauncher
+	Armament:
+		Weapon: RD_PineConeAT
+	SpawnActorsOnSell:
+		ActorTypes: rd_guard, rd_guard, rd_scout, rd_sapper
+		GuaranteedActorTypes: rd_guard

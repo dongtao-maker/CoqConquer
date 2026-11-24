@@ -1,0 +1,4 @@
+# Coq & Conquer: in-game sidebar style per faction.
+Metrics:
+	FactionSuffix-dongtao: allies
+	FactionSuffix-rodents: soviet

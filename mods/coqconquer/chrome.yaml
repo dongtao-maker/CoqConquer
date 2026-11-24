@@ -1,0 +1,22 @@
+# Coq & Conquer: our own lobby flags (uibits/flags*.png, 30x15 each, one per row).
+flags:
+	Image: coqconquer|uibits/flags.png
+	Image2x: coqconquer|uibits/flags-2x.png
+	Image3x: coqconquer|uibits/flags-3x.png
+	Regions:
+		dongtao: 1, 0, 30, 15
+		rodents: 1, 16, 30, 15
+		Random: 1, 32, 30, 15
+		spectator: 1, 48, 30, 15
+		england: 1, 32, 30, 15
+		germany: 1, 32, 30, 15
+		france: 1, 32, 30, 15
+		spain: 1, 32, 30, 15
+		turkey: 1, 32, 30, 15
+		greece: 1, 32, 30, 15
+		ukraine: 1, 32, 30, 15
+		russia: 1, 32, 30, 15
+		allies: 1, 32, 30, 15
+		soviet: 1, 32, 30, 15
+		RandomSoviet: 1, 32, 30, 15
+		RandomAllies: 1, 32, 30, 15

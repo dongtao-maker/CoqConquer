@@ -1,0 +1,234 @@
+# =====================================================================
+#  Dong Tao faction - infantry and hero
+#  Placeholder art: Red Alert infantry sprites (RenderSprites > Image).
+# =====================================================================
+
+# Chickens get +15% damage near the hero (aura "elder-cry").
+^DongTaoChicken:
+	ExternalCondition@ELDER:
+		Condition: elder-cry
+	FirepowerMultiplier@ELDER:
+		RequiresCondition: elder-cry
+		Modifier: 115
+
+# --- Poussin (chick, scout) ------------------------------------------
+dt_chick:
+	Inherits: ^Soldier
+	Inherits@DT: ^DongTaoUnit
+	Inherits@CHICKEN: ^DongTaoChicken
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.dongtao
+		Description: actor-dt-chick.description
+	Valued:
+		Cost: 50
+	Tooltip:
+		Name: actor-dt-chick.name
+	Health:
+		HP: 2500
+	Mobile:
+		Speed: 96
+	RevealsShroud:
+		Range: 7c0
+	DetectCloaked@BURROW:
+		DetectionTypes: Underground
+		Range: 4c0
+	Armament:
+		Weapon: DT_ChickPeck
+	AttackFrontal:
+	RenderSprites:
+		Image: dt_chick
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: DT_NestMG
+	Voiced:
+		VoiceSet: ChickVoice
+
+# --- Poulet Dong Tao (basic infantry) --------------------------------
+dt_chicken:
+	Inherits: ^Soldier
+	Inherits@DT: ^DongTaoUnit
+	Inherits@CHICKEN: ^DongTaoChicken
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 20
+		Prerequisites: ~infantry.dongtao
+		Description: actor-dt-chicken.description
+	Valued:
+		Cost: 120
+	Tooltip:
+		Name: actor-dt-chicken.name
+	Health:
+		HP: 7500
+	Mobile:
+		Speed: 60
+	Armament:
+		Weapon: DT_LegKick
+	AttackFrontal:
+	RenderSprites:
+		Image: dt_chicken
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: DT_Droppings
+	Voiced:
+		VoiceSet: ChickenVoice
+
+# --- Coq grenadier (egg thrower) -------------------------------------
+dt_grenadier:
+	Inherits: ^Soldier
+	Inherits@DT: ^DongTaoUnit
+	Inherits@CHICKEN: ^DongTaoChicken
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.dongtao
+		Description: actor-dt-grenadier.description
+	Valued:
+		Cost: 200
+	Tooltip:
+		Name: actor-dt-grenadier.name
+	Health:
+		HP: 5500
+	Mobile:
+		Speed: 58
+	Armament:
+		Weapon: DT_BoiledEgg
+	AttackFrontal:
+	RenderSprites:
+		Image: dt_grenadier
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: DT_RoofEgg
+	Voiced:
+		VoiceSet: ChickenVoice
+
+# --- Mere poule (medic) ----------------------------------------------
+dt_motherhen:
+	Inherits: MEDI
+	Inherits@DT: ^DongTaoUnit
+	Buildable:
+		Prerequisites: ~infantry.dongtao, dt_radar
+		Description: actor-dt-motherhen.description
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: actor-dt-motherhen.name
+	Mobile:
+		Speed: 58
+	RenderSprites:
+		Image: dt_motherhen
+	Voiced:
+		VoiceSet: ChickenVoice
+
+# --- Fermier (engineer) ----------------------------------------------
+dt_farmer:
+	Inherits: E6
+	Inherits@DT: ^DongTaoUnit
+	Buildable:
+		Prerequisites: ~infantry.dongtao
+		Description: actor-dt-farmer.description
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: actor-dt-farmer.name
+	RenderSprites:
+		Image: dt_farmer
+	Voiced:
+		VoiceSet: FarmerVoice
+
+# --- Coq dragon (heavy anti-tank infantry) ---------------------------
+dt_dragonrooster:
+	Inherits: ^Soldier
+	Inherits@DT: ^DongTaoUnit
+	Inherits@CHICKEN: ^DongTaoChicken
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.dongtao, ~techcenter.dongtao
+		Description: actor-dt-dragonrooster.description
+	Valued:
+		Cost: 450
+	Tooltip:
+		Name: actor-dt-dragonrooster.name
+	Health:
+		HP: 12000
+	Mobile:
+		Speed: 54
+	Armament:
+		Weapon: DT_DragonStomp
+	AttackFrontal:
+	RenderSprites:
+		Image: dt_dragonrooster
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: DT_NestMG
+	Voiced:
+		VoiceSet: ChickenVoice
+
+# =====================================================================
+#  HERO - Dong TaoRhlélas
+#  Giant rooster. Area stomp, pecks aircraft, crushes infantry,
+#  +15% damage aura for nearby chickens. Limited to 1.
+# =====================================================================
+dt_dongtaorhlelas:
+	Inherits: ^Soldier
+	Inherits@DT: ^DongTaoUnit
+	Inherits@AUTOTARGET: ^AutoTargetAllAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 100
+		Prerequisites: ~infantry.dongtao, ~techcenter.dongtao
+		BuildLimit: 1
+		Description: actor-dt-dongtaorhlelas.description
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: actor-dt-dongtaorhlelas.name
+	Health:
+		HP: 140000
+	Armor:
+		Type: Heavy
+	Mobile:
+		Speed: 50
+		Locomotor: giantfoot
+	RevealsShroud:
+		Range: 7c0
+	Armament@STOMP:
+		Weapon: DT_TaoStomp
+	Armament@PECK:
+		Weapon: DT_TaoPeck
+	AttackFrontal:
+	-Crushable:
+	-TakeCover:
+	-Passenger:
+	ChangesHealth:
+		PercentageStep: 1
+		Delay: 50
+		StartIfBelow: 100
+		DamageCooldown: 200
+	ProximityExternalCondition@ELDERCRY:
+		Condition: elder-cry
+		Range: 5c0
+		ValidRelationships: Ally
+	WithRangeCircle@ELDERCRY:
+		Type: elder-cry
+		Range: 5c0
+	RenderSprites:
+		Image: dt_dongtaorhlelas
+	Voiced:
+		VoiceSet: HeroChickenVoice

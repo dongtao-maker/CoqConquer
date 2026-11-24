@@ -1,0 +1,378 @@
+# Coq & Conquer: AI (bots) configured to play Dong Tao and Rodents.
+
+Player:
+	HarvesterBotModule:
+		HarvesterTypes: harv, dt_harv, rd_harv
+		RefineryTypes: proc, dt_proc, rd_proc
+	McvManagerBotModule:
+		McvTypes: dt_mcv, rd_mcv
+		ConstructionYardTypes: dt_fact, rd_fact
+		McvFactoryTypes: dt_weap, rd_weap
+	BaseBuilderBotModule@rush:
+		ConstructionYardTypes: dt_fact, rd_fact
+		RefineryTypes: dt_proc, rd_proc
+		PowerTypes: dt_powr, dt_bigpowr, rd_powr
+		BarracksTypes: dt_barr, rd_barr
+		VehiclesFactoryTypes: dt_weap, rd_weap
+		ProductionTypes: dt_barr, rd_barr, dt_weap, rd_weap, rd_oak
+		SiloTypes: dt_hatch
+		DefenseTypes: dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+		BuildingLimits:
+			dt_proc: 4
+			dt_goldmine: 2
+			rd_proc: 4
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 2
+			rd_weap: 2
+			dt_radar: 1
+			rd_radar: 1
+			dt_temple: 1
+			rd_cave: 1
+			dt_hatch: 2
+			rd_oak: 2
+			dt_altar: 1
+			rd_summit: 1
+		BuildingFractions:
+			dt_bigpowr: 3
+			dt_goldmine: 3
+			dt_proc: 15
+			rd_proc: 15
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 6
+			rd_weap: 6
+			dt_radar: 1
+			rd_radar: 1
+			dt_hatch: 2
+			rd_oak: 4
+			dt_nest: 6
+			dt_mortar: 6
+			dt_firecracker: 4
+			rd_perch: 6
+			rd_conelauncher: 6
+			dt_temple: 1
+			rd_cave: 1
+			dt_altar: 1
+			rd_summit: 1
+		BuildingDelays:
+			dt_radar: 3000
+			rd_radar: 3000
+	UnitBuilderBotModule@rush:
+		UnitsToBuild:
+			dt_chick: 5
+			dt_chicken: 60
+			dt_grenadier: 30
+			dt_motherhen: 10
+			dt_dragonrooster: 25
+			dt_dongtaorhlelas: 10
+			dt_harv: 15
+			dt_scooter: 20
+			dt_ricetruck: 10
+			dt_firecrackerlauncher: 15
+			dt_tractor: 45
+			dt_eggcatapult: 15
+			dt_criminal: 20
+			dt_chickcopter: 8
+			rd_scout: 5
+			rd_guard: 55
+			rd_acorn: 35
+			rd_herbalist: 10
+			rd_driller: 25
+			rd_greatwhistler: 10
+			rd_harv: 15
+			rd_ram: 10
+			rd_stump: 45
+			rd_conecatapult: 15
+			rd_flyingsquirrel: 30
+			rd_squadron: 15
+		UnitLimits:
+			dt_chick: 2
+			rd_scout: 2
+			dt_harv: 8
+			rd_harv: 8
+			dt_motherhen: 3
+			rd_herbalist: 3
+			dt_ricetruck: 2
+			rd_ram: 2
+	SquadManagerBotModule@rush:
+		ConstructionYardTypes: dt_fact, rd_fact
+		AirUnitsTypes: rd_flyingsquirrel, rd_squadron
+		ExcludeFromSquadsTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_kite, dt_chick, rd_scout
+		ProtectionTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_fact, rd_fact, dt_powr, dt_bigpowr, rd_powr, dt_proc, rd_proc, dt_barr, rd_barr, dt_weap, rd_weap, dt_radar, rd_radar, dt_hatch, dt_temple, rd_cave, dt_altar, rd_summit, rd_oak, dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+	BaseBuilderBotModule@normal:
+		ConstructionYardTypes: dt_fact, rd_fact
+		RefineryTypes: dt_proc, rd_proc
+		PowerTypes: dt_powr, dt_bigpowr, rd_powr
+		BarracksTypes: dt_barr, rd_barr
+		VehiclesFactoryTypes: dt_weap, rd_weap
+		ProductionTypes: dt_barr, rd_barr, dt_weap, rd_weap, rd_oak
+		SiloTypes: dt_hatch
+		DefenseTypes: dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+		BuildingLimits:
+			dt_proc: 4
+			dt_goldmine: 2
+			rd_proc: 4
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 2
+			rd_weap: 2
+			dt_radar: 1
+			rd_radar: 1
+			dt_temple: 1
+			rd_cave: 1
+			dt_hatch: 2
+			rd_oak: 2
+			dt_altar: 1
+			rd_summit: 1
+		BuildingFractions:
+			dt_bigpowr: 3
+			dt_goldmine: 3
+			dt_proc: 15
+			rd_proc: 15
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 6
+			rd_weap: 6
+			dt_radar: 1
+			rd_radar: 1
+			dt_hatch: 2
+			rd_oak: 4
+			dt_nest: 6
+			dt_mortar: 6
+			dt_firecracker: 4
+			rd_perch: 6
+			rd_conelauncher: 6
+			dt_temple: 1
+			rd_cave: 1
+			dt_altar: 1
+			rd_summit: 1
+		BuildingDelays:
+			dt_radar: 3000
+			rd_radar: 3000
+	UnitBuilderBotModule@normal:
+		UnitsToBuild:
+			dt_chick: 5
+			dt_chicken: 60
+			dt_grenadier: 30
+			dt_motherhen: 10
+			dt_dragonrooster: 25
+			dt_dongtaorhlelas: 10
+			dt_harv: 15
+			dt_scooter: 20
+			dt_ricetruck: 10
+			dt_firecrackerlauncher: 15
+			dt_tractor: 45
+			dt_eggcatapult: 15
+			dt_criminal: 20
+			dt_chickcopter: 8
+			rd_scout: 5
+			rd_guard: 55
+			rd_acorn: 35
+			rd_herbalist: 10
+			rd_driller: 25
+			rd_greatwhistler: 10
+			rd_harv: 15
+			rd_ram: 10
+			rd_stump: 45
+			rd_conecatapult: 15
+			rd_flyingsquirrel: 30
+			rd_squadron: 15
+		UnitLimits:
+			dt_chick: 2
+			rd_scout: 2
+			dt_harv: 8
+			rd_harv: 8
+			dt_motherhen: 3
+			rd_herbalist: 3
+			dt_ricetruck: 2
+			rd_ram: 2
+	SquadManagerBotModule@normal:
+		ConstructionYardTypes: dt_fact, rd_fact
+		AirUnitsTypes: rd_flyingsquirrel, rd_squadron
+		ExcludeFromSquadsTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_kite, dt_chick, rd_scout
+		ProtectionTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_fact, rd_fact, dt_powr, dt_bigpowr, rd_powr, dt_proc, rd_proc, dt_barr, rd_barr, dt_weap, rd_weap, dt_radar, rd_radar, dt_hatch, dt_temple, rd_cave, dt_altar, rd_summit, rd_oak, dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+	BaseBuilderBotModule@turtle:
+		ConstructionYardTypes: dt_fact, rd_fact
+		RefineryTypes: dt_proc, rd_proc
+		PowerTypes: dt_powr, dt_bigpowr, rd_powr
+		BarracksTypes: dt_barr, rd_barr
+		VehiclesFactoryTypes: dt_weap, rd_weap
+		ProductionTypes: dt_barr, rd_barr, dt_weap, rd_weap, rd_oak
+		SiloTypes: dt_hatch
+		DefenseTypes: dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+		BuildingLimits:
+			dt_proc: 4
+			dt_goldmine: 2
+			rd_proc: 4
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 2
+			rd_weap: 2
+			dt_radar: 1
+			rd_radar: 1
+			dt_temple: 1
+			rd_cave: 1
+			dt_hatch: 2
+			rd_oak: 2
+			dt_altar: 1
+			rd_summit: 1
+		BuildingFractions:
+			dt_bigpowr: 3
+			dt_goldmine: 3
+			dt_proc: 15
+			rd_proc: 15
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 6
+			rd_weap: 6
+			dt_radar: 1
+			rd_radar: 1
+			dt_hatch: 2
+			rd_oak: 4
+			dt_nest: 6
+			dt_mortar: 6
+			dt_firecracker: 4
+			rd_perch: 6
+			rd_conelauncher: 6
+			dt_temple: 1
+			rd_cave: 1
+			dt_altar: 1
+			rd_summit: 1
+		BuildingDelays:
+			dt_radar: 3000
+			rd_radar: 3000
+	UnitBuilderBotModule@turtle:
+		UnitsToBuild:
+			dt_chick: 5
+			dt_chicken: 60
+			dt_grenadier: 30
+			dt_motherhen: 10
+			dt_dragonrooster: 25
+			dt_dongtaorhlelas: 10
+			dt_harv: 15
+			dt_scooter: 20
+			dt_ricetruck: 10
+			dt_firecrackerlauncher: 15
+			dt_tractor: 45
+			dt_eggcatapult: 15
+			dt_criminal: 20
+			dt_chickcopter: 8
+			rd_scout: 5
+			rd_guard: 55
+			rd_acorn: 35
+			rd_herbalist: 10
+			rd_driller: 25
+			rd_greatwhistler: 10
+			rd_harv: 15
+			rd_ram: 10
+			rd_stump: 45
+			rd_conecatapult: 15
+			rd_flyingsquirrel: 30
+			rd_squadron: 15
+		UnitLimits:
+			dt_chick: 2
+			rd_scout: 2
+			dt_harv: 8
+			rd_harv: 8
+			dt_motherhen: 3
+			rd_herbalist: 3
+			dt_ricetruck: 2
+			rd_ram: 2
+	SquadManagerBotModule@turtle:
+		ConstructionYardTypes: dt_fact, rd_fact
+		AirUnitsTypes: rd_flyingsquirrel, rd_squadron
+		ExcludeFromSquadsTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_kite, dt_chick, rd_scout
+		ProtectionTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_fact, rd_fact, dt_powr, dt_bigpowr, rd_powr, dt_proc, rd_proc, dt_barr, rd_barr, dt_weap, rd_weap, dt_radar, rd_radar, dt_hatch, dt_temple, rd_cave, dt_altar, rd_summit, rd_oak, dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+	BaseBuilderBotModule@naval:
+		ConstructionYardTypes: dt_fact, rd_fact
+		RefineryTypes: dt_proc, rd_proc
+		PowerTypes: dt_powr, dt_bigpowr, rd_powr
+		BarracksTypes: dt_barr, rd_barr
+		VehiclesFactoryTypes: dt_weap, rd_weap
+		ProductionTypes: dt_barr, rd_barr, dt_weap, rd_weap, rd_oak
+		SiloTypes: dt_hatch
+		DefenseTypes: dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher
+		BuildingLimits:
+			dt_proc: 4
+			dt_goldmine: 2
+			rd_proc: 4
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 2
+			rd_weap: 2
+			dt_radar: 1
+			rd_radar: 1
+			dt_temple: 1
+			rd_cave: 1
+			dt_hatch: 2
+			rd_oak: 2
+			dt_altar: 1
+			rd_summit: 1
+		BuildingFractions:
+			dt_bigpowr: 3
+			dt_goldmine: 3
+			dt_proc: 15
+			rd_proc: 15
+			dt_barr: 2
+			rd_barr: 2
+			dt_weap: 6
+			rd_weap: 6
+			dt_radar: 1
+			rd_radar: 1
+			dt_hatch: 2
+			rd_oak: 4
+			dt_nest: 6
+			dt_mortar: 6
+			dt_firecracker: 4
+			rd_perch: 6
+			rd_conelauncher: 6
+			dt_temple: 1
+			rd_cave: 1
+			dt_altar: 1
+			rd_summit: 1
+		BuildingDelays:
+			dt_radar: 3000
+			rd_radar: 3000
+	UnitBuilderBotModule@naval:
+		UnitsToBuild:
+			dt_chick: 5
+			dt_chicken: 60
+			dt_grenadier: 30
+			dt_motherhen: 10
+			dt_dragonrooster: 25
+			dt_dongtaorhlelas: 10
+			dt_harv: 15
+			dt_scooter: 20
+			dt_ricetruck: 10
+			dt_firecrackerlauncher: 15
+			dt_tractor: 45
+			dt_eggcatapult: 15
+			dt_criminal: 20
+			dt_chickcopter: 8
+			rd_scout: 5
+			rd_guard: 55
+			rd_acorn: 35
+			rd_herbalist: 10
+			rd_driller: 25
+			rd_greatwhistler: 10
+			rd_harv: 15
+			rd_ram: 10
+			rd_stump: 45
+			rd_conecatapult: 15
+			rd_flyingsquirrel: 30
+			rd_squadron: 15
+		UnitLimits:
+			dt_chick: 2
+			rd_scout: 2
+			dt_harv: 8
+			rd_harv: 8
+			dt_motherhen: 3
+			rd_herbalist: 3
+			dt_ricetruck: 2
+			rd_ram: 2
+	SquadManagerBotModule@naval:
+		ConstructionYardTypes: dt_fact, rd_fact
+		AirUnitsTypes: rd_flyingsquirrel, rd_squadron
+		ExcludeFromSquadsTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_kite, dt_chick, rd_scout
+		ProtectionTypes: dt_harv, rd_harv, dt_mcv, rd_mcv, dt_fact, rd_fact, dt_powr, dt_bigpowr, rd_powr, dt_proc, rd_proc, dt_barr, rd_barr, dt_weap, rd_weap, dt_radar, rd_radar, dt_hatch, dt_temple, rd_cave, dt_altar, rd_summit, rd_oak, dt_nest, dt_firecracker, dt_mortar, rd_perch, rd_conelauncher

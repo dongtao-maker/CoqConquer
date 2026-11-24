@@ -1,0 +1,88 @@
+# Coq & Conquer: unit voices (synthesized animal sounds, WAV files in this folder).
+
+ChickenVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: dtsel1,dtsel2,dtsel3
+		Action: dtack1,dtack2,dtack3
+		Die: dtdie1,dtdie2
+		Burned: dtburn
+		Zapped: dtzap
+
+ChickVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: chksel1,chksel2
+		Action: chkack1
+		Die: chkdie1
+		Burned: chkdie1
+		Zapped: chkdie1
+
+FarmerVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: farmsel1,farmsel2
+		Action: farmack1
+		Die: farmdie1
+		Burned: farmdie1
+		Zapped: farmdie1
+
+HeroChickenVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: herosel1,herosel2
+		Action: heroack1,herosel2
+		Die: herodie1
+		Burned: herodie1
+		Zapped: herodie1
+
+DongTaoVehicleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: dtvsel1,dtvsel2
+		Action: dtvack1
+
+KiteVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: kitesel1
+		Action: kitesel1
+
+MarmotVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: mrsel1,mrsel2,mrsel3
+		Action: mrack1,mrack2
+		Die: mrdie1
+		Burned: mrburn
+		Zapped: mrdie1
+
+SquirrelVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: sqsel1,sqsel2
+		Action: sqack1
+		Die: sqdie1
+		Burned: sqdie1
+		Zapped: sqdie1
+
+HeroMarmotVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: wsel1,wsel2
+		Action: wack1
+		Die: wdie1
+		Burned: wdie1
+		Zapped: wdie1
+
+RodentVehicleVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: rdvsel1
+		Action: rdvack1
+
+FlyingSquirrelVoice:
+	DefaultVariant: .wav
+	Voices:
+		Select: fsqsel1,sqsel1
+		Action: sqack1

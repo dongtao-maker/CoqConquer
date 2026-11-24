@@ -1,0 +1,61 @@
+# =====================================================================
+#  Dong Tao faction - defenses (placeholder art from Red Alert)
+# =====================================================================
+
+# --- Haie de bambou (wall) -------------------------------------------
+dt_wall:
+	Inherits: SBAG
+	Tooltip:
+		Name: actor-dt-wall.name
+	Buildable:
+		Prerequisites: ~structures.dongtao
+		Description: actor-dt-wall.description
+	RenderSprites:
+		Image: dt_wall
+
+# --- Nid de garde (anti-infantry) ------------------------------------
+dt_nest:
+	Inherits: PBOX
+	Tooltip:
+		Name: actor-dt-nest.name
+	Buildable:
+		Prerequisites: dt_barr, ~structures.dongtao
+		Description: actor-dt-nest.description
+	RenderSprites:
+		Image: dt_nest
+	Armament:
+		Weapon: DT_NestMG
+	Cargo:
+		InitialUnits: dt_chicken
+
+# --- Tour a petards (anti-air) ---------------------------------------
+dt_firecracker:
+	Inherits: AGUN
+	Tooltip:
+		Name: actor-dt-firecracker.name
+	Buildable:
+		Prerequisites: dt_radar, ~structures.dongtao
+		Description: actor-dt-firecracker.description
+	RenderSprites:
+		Image: dt_firecracker
+	Armament:
+		Weapon: DT_FirecrackerAA
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Mortier a noix de coco (anti-tank, short range) -----------------
+dt_mortar:
+	Inherits: GUN
+	Tooltip:
+		Name: actor-dt-mortar.name
+	Buildable:
+		Prerequisites: dt_weap, ~structures.dongtao
+		Description: actor-dt-mortar.description
+	RenderSprites:
+		Image: dt_mortar
+	Armament:
+		Weapon: DT_Coconut
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken

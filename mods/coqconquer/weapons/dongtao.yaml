@@ -1,0 +1,377 @@
+# =====================================================================
+#  Dong Tao faction - weapons
+#  Damage values follow Red Alert scale (rifle ~1500, tank shell ~4000).
+#  Visual effects reuse RA sprites/sounds; replace when new art exists.
+# =====================================================================
+
+# --- Infantry --------------------------------------------------------
+DT_ChickPeck:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 20
+	Range: 1c512
+	Report: peck.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 600
+		Versus:
+			None: 100
+			Wood: 10
+			Light: 10
+			Heavy: 5
+			Concrete: 5
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
+DT_LegKick:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 25
+	Range: 2c512
+	Report: kick.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 2200
+		Versus:
+			None: 100
+			Wood: 20
+			Light: 20
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+
+DT_BoiledEgg:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 60
+	Range: 5c0
+	Report: eggthrow.wav
+	Projectile: Bullet
+		Speed: 136
+		Blockable: false
+		LaunchAngle: 62
+		Image: BOMB
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 256
+		Damage: 4000
+		Versus:
+			None: 100
+			Wood: 75
+			Light: 25
+			Heavy: 15
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: eggsplat.wav
+		ValidTargets: Ground, Water, Air
+		Explosions: piffs
+
+DT_DragonStomp:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 45
+	Range: 1c768
+	Report: kick.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 6000
+		Versus:
+			None: 25
+			Wood: 50
+			Light: 100
+			Heavy: 80
+			Concrete: 40
+		DamageTypes: ExplosionDeath
+
+# --- HERO: Dong TaoRhlelas -------------------------------------------
+# Ground stomp: area damage around the target, enemies only.
+DT_TaoStomp:
+	ReloadDelay: 60
+	Range: 1c768
+	Report: stomp.wav
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 1c512
+		Damage: 15000
+		ValidRelationships: Enemy, Neutral
+		Versus:
+			None: 100
+			Wood: 60
+			Light: 70
+			Heavy: 35
+			Concrete: 30
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: artillery_explosion
+		ImpactSounds: stomp.wav
+	Warhead@3Shake: ShakeScreen
+		Duration: 5
+		Intensity: 1
+		Multiplier: 0.5,0.5
+
+# Sky peck: jumps and pecks aircraft at short range.
+DT_TaoPeck:
+	ReloadDelay: 40
+	Range: 3c0
+	Report: skypeck.wav
+	ValidTargets: AirborneActor
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		Damage: 12000
+		ValidTargets: AirborneActor
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 100
+			Heavy: 70
+			Concrete: 50
+		DamageTypes: DefaultDeath
+
+# --- Vehicles --------------------------------------------------------
+DT_ScooterMG:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 20
+	Range: 5c0
+	Report: scootmg.wav
+	Projectile: InstantHit
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Damage: 1500
+		Versus:
+			None: 120
+			Wood: 20
+			Light: 40
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, BulletDeath
+
+DT_FirecrackerAA:
+	ReloadDelay: 35
+	Range: 7c0
+	Burst: 3
+	BurstDelays: 5
+	Report: crackers.wav
+	ValidTargets: AirborneActor
+	Projectile: Missile
+		Speed: 298
+		Image: DRAGON
+		HorizontalRateOfTurn: 40
+		RangeLimit: 9c0
+	Warhead@1Dam: SpreadDamage
+		Spread: 128
+		Damage: 2500
+		ValidTargets: AirborneActor
+		Versus:
+			None: 100
+			Light: 100
+			Heavy: 60
+		DamageTypes: ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		Explosions: small_explosion_air
+		ValidTargets: Air, Ground, Water
+
+# Ground salvo of the firecracker launcher (light, anti-infantry).
+DT_FirecrackerGround:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 50
+	Range: 6c0
+	Burst: 2
+	BurstDelays: 6
+	Report: crackers.wav
+	Projectile: Missile
+		Speed: 213
+		Image: DRAGON
+		HorizontalRateOfTurn: 20
+		RangeLimit: 7c512
+		Inaccuracy: 384
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 256
+		Damage: 1800
+		Versus:
+			None: 100
+			Wood: 30
+			Light: 45
+			Heavy: 15
+			Concrete: 20
+		DamageTypes: Prone50Percent, TriggerProne, SmallExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: small_explosion
+		ImpactSounds: crackers.wav
+
+DT_TractorGun:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 55
+	Range: 4c768
+	Report: tractgun.wav
+	Projectile: Bullet
+		Speed: 682
+		Image: 120MM
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 128
+		Damage: 4200
+		Versus:
+			None: 25
+			Wood: 60
+			Light: 85
+			Heavy: 100
+			Concrete: 50
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: small_explosion
+
+DT_GiantEgg:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 100
+	Range: 9c0
+	MinRange: 3c0
+	Report: catapult.wav
+	Projectile: Bullet
+		Speed: 204
+		Blockable: false
+		LaunchAngle: 62
+		Inaccuracy: 1c512
+		Image: 120MM
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 426
+		Damage: 6500
+		Versus:
+			None: 80
+			Wood: 50
+			Light: 40
+			Heavy: 25
+			Concrete: 45
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: eggsplat.wav
+		ValidTargets: Ground, Water, Air
+		Explosions: med_explosion
+
+# --- Defenses --------------------------------------------------------
+DT_NestMG:
+	Inherits: DT_ScooterMG
+	Report: peck2.wav
+	Range: 6c0
+	ReloadDelay: 15
+
+DT_Coconut:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 50
+	Range: 4c512
+	Report: coconut.wav
+	Projectile: Bullet
+		Speed: 300
+		LaunchAngle: 40
+		Blockable: false
+		Image: 120MM
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 128
+		Damage: 5000
+		Versus:
+			None: 20
+			Wood: 50
+			Light: 90
+			Heavy: 100
+			Concrete: 40
+		DamageTypes: ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: small_explosion
+
+# Chickens on a roof or in a nest: "fiente" droppings (anti-infantry).
+DT_Droppings:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 18
+	Range: 5c512
+	Report: fiente.wav
+	Projectile: Bullet
+		Speed: 170
+		Blockable: false
+		LaunchAngle: 50
+		Image: dt_dropping
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 160
+		Damage: 1800
+		Versus:
+			None: 110
+			Wood: 15
+			Light: 25
+			Heavy: 10
+			Concrete: 10
+		DamageTypes: Prone50Percent, TriggerProne, DefaultDeath
+	Warhead@2Eff: CreateEffect
+		ImpactSounds: eggsplat.wav
+		ValidTargets: Ground, Water, Air
+		Explosions: piffs
+
+# Egg grenadiers on the coop roof: a bit more range than on the ground.
+DT_RoofEgg:
+	Inherits: DT_BoiledEgg
+	Range: 6c0
+
+# Poulicoptere with egg grenadiers aboard: egg bombs dropped from the air.
+DT_EggBomb:
+	ValidTargets: Ground, Water, GroundActor, WaterActor
+	ReloadDelay: 45
+	Range: 3c0
+	Report: eggthrow.wav
+	Projectile: Bullet
+		Speed: 150
+		Blockable: false
+		Image: dt_grenade
+		Inaccuracy: 256
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor
+		Spread: 341
+		Damage: 4000
+		Versus:
+			None: 90
+			Wood: 60
+			Light: 60
+			Heavy: 30
+			Concrete: 40
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: small_explosion
+		ImpactSounds: eggsplat.wav
+
+# Criminal Dong Tao: same as the Soviet Mammoth weapons, own cannon sound.
+DT_CriminalCannon:
+	Inherits: 120mm
+	Report: bigcannon.wav
+
+DT_CriminalTusk:
+	Inherits: MammothTusk
+
+# --- Superweapon: Pluie d'oeufs (Egg Rain) ---------------------------
+EggRain:
+	ValidTargets: Ground, Water, GroundActor, WaterActor, Underwater, AirborneActor, Trees
+	Warhead@1Dam: SpreadDamage
+		ValidTargets: GroundActor, WaterActor, Underwater, AirborneActor, Trees
+		Spread: 2c0
+		Damage: 60000
+		Falloff: 100, 60, 30, 15, 0
+		Versus:
+			None: 100
+			Wood: 100
+			Light: 60
+			Heavy: 40
+			Concrete: 70
+		DamageTypes: Prone50Percent, TriggerProne, ExplosionDeath
+	Warhead@2Eff: CreateEffect
+		ValidTargets: Ground, Water, Air
+		Explosions: nuke
+		ImpactSounds: eggrain.wav
+	Warhead@3Shake: ShakeScreen
+		Duration: 20
+		Intensity: 4
+		Multiplier: 1,1

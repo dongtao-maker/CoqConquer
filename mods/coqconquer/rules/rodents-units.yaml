@@ -1,0 +1,356 @@
+# =====================================================================
+#  Rodent League - infantry, hero, vehicles, aircraft
+# =====================================================================
+
+# --- Ecureuil eclaireur (scout) --------------------------------------
+rd_scout:
+	Inherits: ^Soldier
+	Inherits@RD: ^RodentUnit
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 10
+		Prerequisites: ~infantry.rodents
+		Description: actor-rd-scout.description
+	Valued:
+		Cost: 60
+	Tooltip:
+		Name: actor-rd-scout.name
+	Health:
+		HP: 2000
+	Mobile:
+		Speed: 113
+	RevealsShroud:
+		Range: 8c0
+	Armament:
+		Weapon: DT_ChickPeck
+	RenderSprites:
+		Image: rd_scout
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: RD_AcornVolley
+	Voiced:
+		VoiceSet: SquirrelVoice
+
+# --- Marmotte de garde (basic infantry, burrows) ---------------------
+rd_guard:
+	Inherits: ^Soldier
+	Inherits@RD: ^RodentUnit
+	Inherits@BURROW: ^Burrows
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 20
+		Prerequisites: ~infantry.rodents
+		Description: actor-rd-guard.description
+	Valued:
+		Cost: 110
+	Tooltip:
+		Name: actor-rd-guard.name
+	Health:
+		HP: 4500
+	Mobile:
+		Speed: 56
+	Armament:
+		Weapon: RD_Sling
+	AttackFrontal:
+	RenderSprites:
+		Image: rd_guard
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: RD_AcornVolley
+	Voiced:
+		VoiceSet: MarmotVoice
+
+# --- Ecureuil lanceur de glands (fast ranged) ------------------------
+rd_acorn:
+	Inherits: ^Soldier
+	Inherits@RD: ^RodentUnit
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 30
+		Prerequisites: ~infantry.rodents
+		Description: actor-rd-acorn.description
+	Valued:
+		Cost: 160
+	Tooltip:
+		Name: actor-rd-acorn.name
+	Health:
+		HP: 3500
+	Mobile:
+		Speed: 85
+	Armament:
+		Weapon: RD_AcornVolley
+	AttackFrontal:
+	RenderSprites:
+		Image: rd_acorn
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: RD_AcornVolley
+	Voiced:
+		VoiceSet: SquirrelVoice
+
+# --- Marmotte herboriste (medic) -------------------------------------
+rd_herbalist:
+	Inherits: MEDI
+	Inherits@RD: ^RodentUnit
+	Buildable:
+		Prerequisites: ~infantry.rodents, rd_radar
+		Description: actor-rd-herbalist.description
+	Valued:
+		Cost: 250
+	Tooltip:
+		Name: actor-rd-herbalist.name
+	RenderSprites:
+		Image: rd_herbalist
+	Voiced:
+		VoiceSet: MarmotVoice
+
+# --- Marmotte sapeuse (engineer) -------------------------------------
+rd_sapper:
+	Inherits: E6
+	Inherits@RD: ^RodentUnit
+	Buildable:
+		Prerequisites: ~infantry.rodents
+		Description: actor-rd-sapper.description
+	Valued:
+		Cost: 500
+	Tooltip:
+		Name: actor-rd-sapper.name
+	RenderSprites:
+		Image: rd_sapper
+	Voiced:
+		VoiceSet: MarmotVoice
+
+# --- Marmotte foreuse (anti-tank ambusher) ---------------------------
+rd_driller:
+	Inherits: ^Soldier
+	Inherits@RD: ^RodentUnit
+	Inherits@BURROW: ^Burrows
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 60
+		Prerequisites: ~infantry.rodents, ~techcenter.rodents
+		Description: actor-rd-driller.description
+	Valued:
+		Cost: 400
+	Tooltip:
+		Name: actor-rd-driller.name
+	Health:
+		HP: 6000
+	Mobile:
+		Speed: 50
+	Armament:
+		Weapon: RD_DrillBite
+	AttackFrontal:
+	RenderSprites:
+		Image: rd_driller
+	Armament@GARRISONED:
+		Name: garrisoned
+		Weapon: RD_AcornVolley
+	Voiced:
+		VoiceSet: MarmotVoice
+
+# =====================================================================
+#  HERO - Le Grand Siffleur (The Great Whistler)
+#  Giant ancestral marmot. Whistle slows enemies around him,
+#  short-range burrow teleport, +20% speed aura for rodents.
+#  Fragile for a hero but very hard to catch. Limited to 1.
+# =====================================================================
+rd_greatwhistler:
+	Inherits: ^Soldier
+	Inherits@RD: ^RodentUnit
+	Inherits@AUTOTARGET: ^AutoTargetGroundAssaultMove
+	WithInfantryBody:
+		DefaultAttackSequence: shoot
+	Buildable:
+		Queue: Infantry
+		BuildPaletteOrder: 100
+		Prerequisites: ~infantry.rodents, ~techcenter.rodents
+		BuildLimit: 1
+		Description: actor-rd-greatwhistler.description
+	Valued:
+		Cost: 2000
+	Tooltip:
+		Name: actor-rd-greatwhistler.name
+	Health:
+		HP: 60000
+	Armor:
+		Type: Light
+	Mobile:
+		Speed: 75
+	RevealsShroud:
+		Range: 8c0
+	Armament@WHISTLE:
+		Weapon: RD_Whistle
+	AttackFrontal:
+	PortableChrono:
+		ChargeDelay: 375
+		MaxDistance: 8
+		ChronoshiftSound: burrow.wav
+	DetectCloaked:
+		DetectionTypes: Underground, Cloak
+		Range: 5c0
+	-TakeCover:
+	-Passenger:
+	ChangesHealth:
+		PercentageStep: 1
+		Delay: 50
+		StartIfBelow: 100
+		DamageCooldown: 200
+	ProximityExternalCondition@RALLY:
+		Condition: rally
+		Range: 5c0
+		ValidRelationships: Ally
+	RenderSprites:
+		Image: rd_greatwhistler
+	Voiced:
+		VoiceSet: HeroMarmotVoice
+
+# --- Vehicles --------------------------------------------------------
+rd_mcv:
+	Inherits: MCV
+	Inherits@RD: ^RodentUnit
+	Tooltip:
+		Name: actor-rd-mcv.name
+	Buildable:
+		Prerequisites: rd_weap, ~vehicles.rodents
+		Description: actor-rd-mcv.description
+	Transforms:
+		IntoActor: rd_fact
+	RenderSprites:
+		Image: rd_mcv
+	-SpawnActorOnDeath:
+	Voiced:
+		VoiceSet: RodentVehicleVoice
+
+rd_harv:
+	Inherits: HARV
+	Inherits@RD: ^RodentUnit
+	WithHarvesterSpriteBody:
+		ImageByFullness: rd_harv_empty, rd_harv_half, rd_harv
+	WithMoveAnimation:
+		MoveSequence: move
+	Tooltip:
+		Name: actor-rd-harv.name
+	Buildable:
+		Prerequisites: rd_proc, ~vehicles.rodents
+		Description: actor-rd-harv.description
+	RenderSprites:
+		Image: rd_harv
+	-SpawnActorOnDeath:
+	-HarvesterHuskModifier:
+	Voiced:
+		VoiceSet: RodentVehicleVoice
+
+rd_ram:
+	Inherits: APC
+	Inherits@RD: ^RodentUnit
+	Tooltip:
+		Name: actor-rd-ram.name
+	Buildable:
+		Prerequisites: ~vehicles.rodents
+		Description: actor-rd-ram.description
+	Valued:
+		Cost: 650
+	Cargo:
+		MaxWeight: 5
+	RenderSprites:
+		Image: rd_ram
+	Voiced:
+		VoiceSet: RodentVehicleVoice
+
+rd_stump:
+	Inherits: 1TNK
+	Inherits@RD: ^RodentUnit
+	Tooltip:
+		Name: actor-rd-stump.name
+	Buildable:
+		Prerequisites: ~vehicles.rodents, rd_radar
+		Description: actor-rd-stump.description
+	Valued:
+		Cost: 700
+	Mobile:
+		Speed: 113
+	Armament:
+		Weapon: RD_StumpGun
+	RenderSprites:
+		Image: rd_stump
+	Voiced:
+		VoiceSet: RodentVehicleVoice
+
+rd_conecatapult:
+	Inherits: ARTY
+	Inherits@RD: ^RodentUnit
+	Tooltip:
+		Name: actor-rd-conecatapult.name
+	Buildable:
+		Prerequisites: ~vehicles.rodents, ~techcenter.rodents
+		Description: actor-rd-conecatapult.description
+	Valued:
+		Cost: 900
+	Armament:
+		Weapon: RD_GiantPineCone
+	RenderSprites:
+		Image: rd_conecatapult
+	Voiced:
+		VoiceSet: RodentVehicleVoice
+
+# --- Aircraft (built at the Great Oak) -------------------------------
+rd_flyingsquirrel:
+	Inherits: HIND
+	Inherits@RD: ^RodentUnit
+	Tooltip:
+		Name: actor-rd-flyingsquirrel.name
+	Buildable:
+		Prerequisites: ~aircraft.rodents
+		Description: actor-rd-flyingsquirrel.description
+	Valued:
+		Cost: 600
+	Health:
+		HP: 12000
+	Aircraft:
+		Speed: 160
+	Armament:
+		Weapon: RD_AirAcorns
+	Rearmable:
+		RearmActors: rd_oak
+	RenderSprites:
+		Image: rd_flyingsquirrel
+	-SpawnActorOnDeath:
+	-EjectOnDeath:
+	Voiced:
+		VoiceSet: FlyingSquirrelVoice
+
+rd_squadron:
+	Inherits: HELI
+	Inherits@RD: ^RodentUnit
+	Tooltip:
+		Name: actor-rd-squadron.name
+	Buildable:
+		Prerequisites: ~aircraft.rodents, ~techcenter.rodents
+		Description: actor-rd-squadron.description
+	Valued:
+		Cost: 1200
+	Armament@PRIMARY:
+		Weapon: RD_WalnutBomb
+	Armament@SECONDARY:
+		Weapon: RD_WalnutBomb
+	Rearmable:
+		RearmActors: rd_oak
+	RenderSprites:
+		Image: rd_squadron
+	-SpawnActorOnDeath:
+	-EjectOnDeath:
+	Voiced:
+		VoiceSet: FlyingSquirrelVoice

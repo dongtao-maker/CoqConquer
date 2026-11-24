@@ -1,0 +1,255 @@
+# =====================================================================
+#  Dong Tao faction - structures
+#  Placeholder art: each building reuses a Red Alert sprite through
+#  RenderSprites > Image, so the faction can be tested before new art.
+# =====================================================================
+
+# --- Cour de ferme (construction yard) -------------------------------
+dt_fact:
+	Inherits: FACT
+	Tooltip:
+		Name: actor-dt-fact.name
+	Buildable:
+		Prerequisites: ~disabled
+	RenderSprites:
+		Image: dt_fact
+	Transforms:
+		IntoActor: dt_mcv
+	ProvidesPrerequisite@dongtao:
+		Prerequisite: structures.dongtao
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Moulin a eau (power) --------------------------------------------
+dt_powr:
+	Inherits: POWR
+	Tooltip:
+		Name: actor-dt-powr.name
+	Buildable:
+		Prerequisites: ~structures.dongtao
+		Description: actor-dt-powr.description
+	RenderSprites:
+		Image: dt_powr
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Grand moulin a eau (advanced power: twice the water mill) ------
+dt_bigpowr:
+	Inherits: APWR
+	Tooltip:
+		Name: actor-dt-bigpowr.name
+	Buildable:
+		Prerequisites: dt_radar, ~structures.dongtao
+		Description: actor-dt-bigpowr.description
+	Power:
+		Amount: 200
+	RenderSprites:
+		Image: dt_bigpowr
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Mine d'or: a buildable "oil derrick" where chickens mine gold (steady income) ---
+dt_goldmine:
+	Inherits: ^Building
+	Inherits@shape: ^2x2Shape
+	Selectable:
+		Bounds: 2048, 2048
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 75
+		BuildLimit: 3
+		Prerequisites: dt_proc, ~structures.dongtao
+		Description: actor-dt-goldmine.description
+	Valued:
+		Cost: 1200
+	Tooltip:
+		Name: actor-dt-goldmine.name
+	Building:
+		Footprint: xx xx
+		Dimensions: 2,2
+	Health:
+		HP: 60000
+	Armor:
+		Type: Wood
+	RevealsShroud:
+		Range: 4c0
+	Power:
+		Amount: -20
+	CashTrickler:
+		Interval: 375
+		Amount: 60
+	RenderSprites:
+		Image: dt_goldmine
+	ProvidesPrerequisite@buildingname:
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Grenier a riz (refinery) ----------------------------------------
+dt_proc:
+	Inherits: PROC
+	Tooltip:
+		Name: actor-dt-proc.name
+	Buildable:
+		Prerequisites: dt_powr, ~structures.dongtao
+		Description: actor-dt-proc.description
+	RenderSprites:
+		Image: dt_proc
+	FreeActor:
+		Actor: dt_harv
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Poulailler (barracks) -------------------------------------------
+dt_barr:
+	Inherits: TENT
+	Inherits@AUTOTARGET: ^AutoTargetGround
+	Inherits@CARGOPIPS: ^CargoPips
+	Tooltip:
+		Name: actor-dt-barr.name
+	Buildable:
+		Prerequisites: dt_powr, ~structures.dongtao
+		Description: actor-dt-barr.description
+	RenderSprites:
+		Image: dt_barr
+	ProvidesPrerequisite@dongtao:
+		Prerequisite: infantry.dongtao
+	# Up to 4 chickens / egg grenadiers can sit on the roof and attack from there.
+	Cargo:
+		Types: Infantry
+		MaxWeight: 4
+		PassengerConditions:
+			dt_chicken: roof-chicken
+			dt_grenadier: roof-grenadier
+	AttackGarrisoned:
+		PauseOnCondition: build-incomplete
+		Armaments: garrisoned
+		PortOffsets: 0,0,900, 0,0,900, 0,0,900, 0,0,900, 0,0,900, 0,0,900
+		PortYaws: 0, 171, 341, 512, 683, 853
+		PortCones: 100, 100, 100, 100, 100, 100
+	WithIdleOverlay@ROOFCHICKEN1:
+		Sequence: roof-chicken1
+		RequiresCondition: roof-chicken >= 1
+	WithIdleOverlay@ROOFCHICKEN2:
+		Sequence: roof-chicken2
+		RequiresCondition: roof-chicken >= 2
+	WithIdleOverlay@ROOFGRENADIER1:
+		Sequence: roof-grenadier1
+		RequiresCondition: roof-grenadier >= 1
+	WithIdleOverlay@ROOFGRENADIER2:
+		Sequence: roof-grenadier2
+		RequiresCondition: roof-grenadier >= 2
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Atelier de bambou (war factory) ---------------------------------
+dt_weap:
+	Inherits: WEAP
+	Tooltip:
+		Name: actor-dt-weap.name
+	Buildable:
+		Prerequisites: dt_proc, ~structures.dongtao
+		Description: actor-dt-weap.description
+	RenderSprites:
+		Image: dt_weap
+	ProvidesPrerequisite@dongtao:
+		Prerequisite: vehicles.dongtao
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Pagode de guet (radar) + Chant de l'aube ------------------------
+dt_radar:
+	Inherits: DOME
+	Tooltip:
+		Name: actor-dt-radar.name
+	Buildable:
+		Prerequisites: dt_proc, ~structures.dongtao
+		Description: actor-dt-radar.description
+	RenderSprites:
+		Image: dt_radar
+	DetectCloaked@BURROW:
+		DetectionTypes: Underground
+		Range: 8c0
+	GrantExternalConditionPower@DAWNSONG:
+		PauseOnCondition: disabled
+		OrderName: DawnSong
+		Name: actor-dt-radar.grantexternalconditionpower-name
+		Description: actor-dt-radar.grantexternalconditionpower-description
+		Icon: invuln
+		ChargeInterval: 6000
+		Condition: dawn-song
+		OnFireSound: crow.wav
+		Duration: 500
+		Dimensions: 5, 5
+		Footprint: xxxxx xxxxx xxxxx xxxxx xxxxx
+		ValidRelationships: Ally
+		BlockedCursor: move-blocked
+		SupportPowerPaletteOrder: 20
+	SupportPowerChargeBar:
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Couvoir imperial (passive income, unique) -----------------------
+dt_hatch:
+	Inherits: SILO
+	Tooltip:
+		Name: actor-dt-hatch.name
+	Buildable:
+		Queue: Building
+		BuildPaletteOrder: 75
+		Prerequisites: dt_radar, ~structures.dongtao
+		BuildLimit: 2
+		Description: actor-dt-hatch.description
+	Valued:
+		Cost: 1500
+	Health:
+		HP: 60000
+	CashTrickler:
+		Interval: 250
+		Amount: 15
+	RenderSprites:
+		Image: dt_hatch
+
+# --- Temple du Coq d'Or (tech center) --------------------------------
+dt_temple:
+	Inherits: ATEK
+	Tooltip:
+		Name: actor-dt-temple.name
+	Buildable:
+		Prerequisites: dt_weap, dt_radar, ~structures.dongtao
+		Description: actor-dt-temple.description
+	RenderSprites:
+		Image: dt_temple
+	ProvidesPrerequisite@dongtao:
+		Prerequisite: techcenter.dongtao
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
+
+# --- Autel de l'Aube (superweapon: Pluie d'oeufs) --------------------
+dt_altar:
+	Inherits: MSLO
+	Tooltip:
+		Name: actor-dt-altar.name
+	Buildable:
+		Prerequisites: dt_temple, ~structures.dongtao
+		Description: actor-dt-altar.description
+	RenderSprites:
+		Image: dt_altar
+	NukePower:
+		Name: actor-dt-altar.nukepower-name
+		Description: actor-dt-altar.nukepower-description
+		MissileWeapon: EggRain
+		ChargeInterval: 15000
+	SpawnActorsOnSell:
+		ActorTypes: dt_chicken, dt_chicken, dt_chick, dt_farmer
+		GuaranteedActorTypes: dt_chicken
